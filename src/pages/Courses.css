@@ -1,0 +1,430 @@
+.courses-page {
+  background: #f7f9fc;
+  min-height: 100vh;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.courses-hero {
+  min-height: 360px;
+
+  background:
+    linear-gradient(
+      rgba(7, 42, 90, 0.88),
+      rgba(13, 91, 160, 0.82)
+    ),
+    url("https://images.unsplash.com/photo-1523240795612-9a054b0db644");
+
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  color: white;
+}
+
+
+.courses-hero-content {
+  padding: 30px;
+}
+
+
+.small-heading {
+  font-size: 15px;
+  letter-spacing: 3px;
+  font-weight: 600;
+}
+
+
+.courses-hero h1 {
+  font-size: 58px;
+  margin: 15px 0;
+  font-weight: 700;
+}
+
+
+.courses-hero p {
+  font-size: 20px;
+}
+
+
+/* =========================
+   INTRODUCTION
+========================= */
+
+.courses-introduction {
+  max-width: 900px;
+
+  margin: auto;
+
+  padding: 70px 20px 40px;
+
+  text-align: center;
+}
+
+
+.courses-introduction h2 {
+  font-size: 36px;
+
+  color: #0755a5;
+
+  margin-bottom: 20px;
+}
+
+
+.courses-introduction p {
+  font-size: 17px;
+
+  color: #555;
+
+  line-height: 1.8;
+}
+
+
+/* =========================
+   COURSES
+========================= */
+
+.courses-section {
+  padding: 40px 7% 80px;
+}
+
+
+.course-container {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap: 30px;
+
+  max-width: 1150px;
+
+  margin: auto;
+}
+
+
+/* =========================
+   COURSE CARD
+========================= */
+
+.course-card {
+  background: white;
+
+  padding: 35px;
+
+  border-radius: 18px;
+
+  border: 1px solid #e5eaf0;
+
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.07);
+
+  transition: 0.3s;
+}
+
+
+.course-card:hover {
+  transform: translateY(-8px);
+
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+
+/* ICON */
+
+.course-icon {
+  width: 70px;
+  height: 70px;
+
+  border-radius: 15px;
+
+  background: #e8f3ff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 36px;
+
+  margin-bottom: 20px;
+}
+
+
+/* BOARD */
+
+.course-board {
+  display: inline-block;
+
+  background: #e8f3ff;
+
+  color: #0755a5;
+
+  padding: 6px 14px;
+
+  border-radius: 20px;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  margin-bottom: 12px;
+}
+
+
+.course-card h3 {
+  font-size: 27px;
+
+  color: #222;
+
+  margin: 8px 0 15px;
+}
+
+
+.course-description {
+  color: #666;
+
+  line-height: 1.7;
+
+  margin-bottom: 20px;
+}
+
+
+/* FEATURES */
+
+.course-features {
+  margin-bottom: 25px;
+}
+
+
+.feature {
+  display: flex;
+
+  gap: 10px;
+
+  margin-bottom: 10px;
+
+  color: #444;
+
+  font-size: 15px;
+}
+
+
+.feature span {
+  color: #0d6efd;
+
+  font-weight: bold;
+}
+
+
+/* BUTTON */
+
+.course-button {
+  display: inline-block;
+
+  padding: 12px 25px;
+
+  background: #0d6efd;
+
+  color: white;
+
+  text-decoration: none;
+
+  border-radius: 25px;
+
+  font-weight: 600;
+
+  transition: 0.3s;
+}
+
+
+.course-button:hover {
+  background: #063f8c;
+}
+
+
+/* =========================
+   WHY KAIZEN
+========================= */
+
+.why-kaizen {
+  background: white;
+
+  padding: 80px 7%;
+
+  text-align: center;
+}
+
+
+.why-kaizen h2 {
+  color: #0755a5;
+
+  font-size: 36px;
+
+  margin-bottom: 10px;
+}
+
+
+.why-subtitle {
+  color: #666;
+
+  margin-bottom: 45px;
+}
+
+
+.benefits {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 25px;
+
+  max-width: 1100px;
+
+  margin: auto;
+}
+
+
+.benefit-card {
+  background: #f7f9fc;
+
+  padding: 30px 20px;
+
+  border-radius: 15px;
+
+  transition: 0.3s;
+}
+
+
+.benefit-card:hover {
+  transform: translateY(-6px);
+}
+
+
+.benefit-card div {
+  font-size: 40px;
+
+  margin-bottom: 15px;
+}
+
+
+.benefit-card h3 {
+  font-size: 19px;
+
+  margin-bottom: 10px;
+}
+
+
+.benefit-card p {
+  color: #666;
+
+  line-height: 1.6;
+}
+
+
+/* =========================
+   CTA
+========================= */
+
+.course-cta {
+  background:
+    linear-gradient(
+      135deg,
+      #0755a5,
+      #0d6efd
+    );
+
+  color: white;
+
+  text-align: center;
+
+  padding: 80px 20px;
+}
+
+
+.course-cta h2 {
+  font-size: 38px;
+
+  margin-bottom: 15px;
+}
+
+
+.course-cta p {
+  font-size: 18px;
+
+  margin-bottom: 30px;
+}
+
+
+.course-cta a {
+  display: inline-block;
+
+  padding: 13px 32px;
+
+  background: white;
+
+  color: #0755a5;
+
+  border-radius: 30px;
+
+  text-decoration: none;
+
+  font-weight: 700;
+}
+
+
+.course-cta a:hover {
+  background: #f0f0f0;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+  .course-container {
+    grid-template-columns: 1fr;
+  }
+
+  .benefits {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .courses-hero h1 {
+    font-size: 40px;
+  }
+
+  .courses-hero p {
+    font-size: 16px;
+  }
+
+  .benefits {
+    grid-template-columns: 1fr;
+  }
+
+  .course-card {
+    padding: 25px;
+  }
+
+  .courses-introduction h2 {
+    font-size: 29px;
+  }
+
+}
