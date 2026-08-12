@@ -1,156 +1,130 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "./Courses.css";
 
+
 function Courses() {
-  const courses = [
-    {
-      icon: "📘",
-      title: "7th to 10th",
-      board: "State Board",
-      description:
-        "Complete academic coaching for Maharashtra State Board students from 7th to 10th standard with strong concept building and examination preparation.",
-      features: [
-        "All Major Subjects",
-        "Regular Tests",
-        "Study Material",
-        "Doubt Solving",
-        "Board Exam Preparation",
-      ],
-    },
-
-    {
-      icon: "📚",
-      title: "5th to 10th",
-      board: "CBSE",
-      description:
-        "Concept-based CBSE coaching with special focus on NCERT curriculum, problem solving and preparation for school examinations.",
-      features: [
-        "NCERT Based Learning",
-        "All Major Subjects",
-        "Regular Assessments",
-        "Practice Worksheets",
-        "Exam Preparation",
-      ],
-    },
-
-    {
-      icon: "🔬",
-      title: "11th & 12th",
-      board: "Science",
-      description:
-        "Comprehensive coaching for 11th and 12th Science students with expert guidance, regular tests and competitive exam preparation.",
-      features: [
-        "Physics",
-        "Chemistry",
-        "Mathematics",
-        "Biology",
-        "Regular Test Series",
-      ],
-    },
-
-    {
-      icon: "🏆",
-      title: "Scholarship",
-      board: "Scholarship / NMMS",
-      description:
-        "Special coaching for Scholarship and NMMS examinations with practice tests, reasoning, mathematics and previous question papers.",
-      features: [
-        "NMMS Preparation",
-        "Scholarship Exam",
-        "Reasoning Practice",
-        "Mathematics Practice",
-        "Mock Tests",
-      ],
-    },
-  ];
-
   return (
     <div className="courses-page">
 
-      {/* Hero Section */}
-      <section className="courses-hero">
-
-        <div className="courses-hero-content">
-
-          <span className="small-heading">
-            KAIZEN COACHING CLASS
-          </span>
-
-          <h1>Our Courses</h1>
-
-          <p>
-            Quality Education • Strong Concepts • Better Results
-          </p>
-
-        </div>
-
-      </section>
-
-
-      {/* Introduction */}
-      <section className="courses-introduction">
-
-        <h2>Courses We Offer</h2>
-
+      {/* Header */}
+      <section className="courses-header">
+        <h1>Our Courses</h1>
         <p>
-          Kaizen Coaching Class provides quality education and academic
-          guidance for students from 5th to 12th standard. Our courses are
-          designed according to the requirements of State Board, CBSE,
-          Science and Scholarship/NMMS students.
+          Quality Education for a Bright and Successful Future
         </p>
-
       </section>
 
-
-      {/* Course Cards */}
+      {/* Courses */}
       <section className="courses-section">
 
-        <div className="course-container">
+        <div className="courses-container">
 
-          {courses.map((course, index) => (
+          {/* State Board */}
+          <div className="course-card">
+            <div className="course-icon">📚</div>
 
-            <div className="course-card" key={index}>
+            <h2>7th to 10th</h2>
 
-              <div className="course-icon">
-                {course.icon}
-              </div>
+            <h3>State Board</h3>
 
-              <span className="course-board">
-                {course.board}
-              </span>
+            <p>
+              Complete academic coaching for Maharashtra State Board
+              students from 7th to 10th standard.
+            </p>
 
-              <h3>{course.title}</h3>
+            <ul>
+              <li>✔ Mathematics</li>
+              <li>✔ Science</li>
+              <li>✔ English</li>
+              <li>✔ Social Science</li>
+              <li>✔ Regular Tests</li>
+            </ul>
 
-              <p className="course-description">
-                {course.description}
-              </p>
-
-
-              <div className="course-features">
-
-                {course.features.map((feature, i) => (
-
-                  <div className="feature" key={i}>
-                    <span>✓</span>
-                    {feature}
-                  </div>
-
-                ))}
-
-              </div>
+            <a href="/registration" className="course-btn">
+              Enroll Now
+            </a>
+          </div>
 
 
-              <Link
-                to="/registration"
-                className="course-button"
-              >
-                Enroll Now →
-              </Link>
+          {/* CBSE */}
+          <div className="course-card">
+            <div className="course-icon">🎓</div>
 
-            </div>
+            <h2>5th to 10th</h2>
 
-          ))}
+            <h3>CBSE Board</h3>
+
+            <p>
+              Concept-based coaching and personalized guidance for
+              CBSE students from 5th to 10th standard.
+            </p>
+
+            <ul>
+              <li>✔ Mathematics</li>
+              <li>✔ Science</li>
+              <li>✔ English</li>
+              <li>✔ Concept Building</li>
+              <li>✔ Practice Tests</li>
+            </ul>
+
+            <a href="/registration" className="course-btn">
+              Enroll Now
+            </a>
+          </div>
+
+
+          {/* Science */}
+          <div className="course-card">
+            <div className="course-icon">🔬</div>
+
+            <h2>11th & 12th</h2>
+
+            <h3>Science</h3>
+
+            <p>
+              Comprehensive preparation for 11th and 12th Science
+              students with experienced faculty and regular assessments.
+            </p>
+
+            <ul>
+              <li>✔ Physics</li>
+              <li>✔ Chemistry</li>
+              <li>✔ Mathematics</li>
+              <li>✔ Biology</li>
+              <li>✔ Board Exam Preparation</li>
+            </ul>
+
+            <a href="/registration" className="course-btn">
+              Enroll Now
+            </a>
+          </div>
+
+
+          {/* Scholarship */}
+          <div className="course-card scholarship-card">
+            <div className="course-icon">🏆</div>
+
+            <h2>Scholarship</h2>
+
+            <h3>NMMS Preparation</h3>
+
+            <p>
+              Special preparation program for students appearing for
+              Scholarship and NMMS examinations.
+            </p>
+
+            <ul>
+              <li>✔ Mental Ability Test</li>
+              <li>✔ Scholastic Aptitude</li>
+              <li>✔ Practice Papers</li>
+              <li>✔ Mock Tests</li>
+              <li>✔ Expert Guidance</li>
+            </ul>
+
+            <a href="/registration" className="course-btn">
+              Enroll Now
+            </a>
+          </div>
 
         </div>
 
@@ -158,70 +132,45 @@ function Courses() {
 
 
       {/* Why Choose Us */}
-      <section className="why-kaizen">
+      <section className="why-section">
 
-        <h2>Why Choose Kaizen?</h2>
+        <h2>Why Choose Kaizen Coaching Class?</h2>
 
-        <p className="why-subtitle">
-          We focus on overall academic development of every student.
-        </p>
+        <div className="why-container">
 
-
-        <div className="benefits">
-
-          <div className="benefit-card">
-            <div>👨‍🏫</div>
+          <div className="why-box">
+            <span>👨‍🏫</span>
             <h3>Experienced Faculty</h3>
             <p>
               Learn from experienced and dedicated teachers.
             </p>
           </div>
 
-
-          <div className="benefit-card">
-            <div>📝</div>
+          <div className="why-box">
+            <span>📝</span>
             <h3>Regular Tests</h3>
             <p>
-              Regular tests and assessments to track student progress.
+              Regular tests and assessments to track your progress.
             </p>
           </div>
 
-
-          <div className="benefit-card">
-            <div>📖</div>
-            <h3>Study Material</h3>
+          <div className="why-box">
+            <span>🎯</span>
+            <h3>Personal Attention</h3>
             <p>
-              Quality study material and practice worksheets.
+              Individual guidance to improve student performance.
             </p>
           </div>
 
-
-          <div className="benefit-card">
-            <div>🎯</div>
-            <h3>Personal Guidance</h3>
+          <div className="why-box">
+            <span>🏆</span>
+            <h3>Better Results</h3>
             <p>
-              Individual attention and doubt-solving support.
+              Focused preparation to help students achieve their goals.
             </p>
           </div>
 
         </div>
-
-      </section>
-
-
-      {/* CTA */}
-      <section className="course-cta">
-
-        <h2>Start Your Learning Journey Today!</h2>
-
-        <p>
-          Join Kaizen Coaching Class and take the first step towards
-          academic success.
-        </p>
-
-        <Link to="/registration">
-          Register Now
-        </Link>
 
       </section>
 

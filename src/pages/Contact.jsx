@@ -2,64 +2,77 @@ import React, { useState } from "react";
 import "./Contact.css";
 
 function Contact() {
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
     subject: "",
-    message: "",
+    message: ""
   });
 
   const handleChange = (e) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value,
+      [e.target.name]: e.target.value
     });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    alert("Thank you for contacting Kaizen Coaching Class!");
+    alert("Thank you! Your message has been submitted.");
 
     setFormData({
       name: "",
       email: "",
       phone: "",
       subject: "",
-      message: "",
+      message: ""
     });
   };
 
   return (
     <div className="contact-page">
 
-      {/* Hero Section */}
+      {/* =========================
+          HERO SECTION
+          ========================= */}
+
       <section className="contact-hero">
+
         <div className="contact-hero-content">
-          <span>KAIZEN COACHING CLASS</span>
+
           <h1>Contact Us</h1>
+
           <p>
-            We are here to help you with your learning journey.
+            Have questions about our courses?
+            We are here to help you.
           </p>
+
         </div>
+
       </section>
 
 
-      {/* Contact Information */}
+      {/* =========================
+          CONTACT INFORMATION
+          ========================= */}
+
       <section className="contact-section">
 
         <div className="contact-container">
 
-          {/* Left Side */}
+          {/* LEFT SIDE */}
+
           <div className="contact-info">
 
             <h2>Get In Touch</h2>
 
             <p className="contact-description">
-              Have questions about our courses, admission, batches or
-              fees? Feel free to contact Kaizen Coaching Class.
-              Our team will be happy to assist you.
+              Contact Kaizen Coaching Class for course
+              information, admission details, fees and
+              other enquiries.
             </p>
 
 
@@ -71,9 +84,11 @@ function Contact() {
 
               <div>
                 <h3>Our Address</h3>
+
                 <p>
                   Kaizen Coaching Class,<br />
-                  Satara, Maharashtra, India
+                  Satara, Maharashtra,<br />
+                  India
                 </p>
               </div>
 
@@ -88,8 +103,13 @@ function Contact() {
 
               <div>
                 <h3>Phone Number</h3>
+
                 <p>
-                  +91 XXXXX XXXXX
+                  +91 98765 43210
+                </p>
+
+                <p>
+                  +91 91234 56789
                 </p>
               </div>
 
@@ -104,9 +124,11 @@ function Contact() {
 
               <div>
                 <h3>Email Address</h3>
+
                 <p>
-                  kaizencoaching@gmail.com
+                  info@kaizencoaching.com
                 </p>
+
               </div>
 
             </div>
@@ -120,10 +142,15 @@ function Contact() {
 
               <div>
                 <h3>Working Hours</h3>
+
                 <p>
-                  Monday - Saturday<br />
+                  Monday - Saturday
+                </p>
+
+                <p>
                   8:00 AM - 8:00 PM
                 </p>
+
               </div>
 
             </div>
@@ -131,17 +158,26 @@ function Contact() {
           </div>
 
 
-          {/* Right Side - Contact Form */}
+          {/* RIGHT SIDE - FORM */}
+
           <div className="contact-form-box">
 
             <h2>Send Us a Message</h2>
+
+            <p>
+              Fill out the form and our team will
+              get back to you soon.
+            </p>
 
             <form onSubmit={handleSubmit}>
 
               <div className="form-row">
 
                 <div className="form-group">
-                  <label>Full Name</label>
+
+                  <label>
+                    Full Name
+                  </label>
 
                   <input
                     type="text"
@@ -151,11 +187,15 @@ function Contact() {
                     onChange={handleChange}
                     required
                   />
+
                 </div>
 
 
                 <div className="form-group">
-                  <label>Email Address</label>
+
+                  <label>
+                    Email
+                  </label>
 
                   <input
                     type="email"
@@ -165,6 +205,7 @@ function Contact() {
                     onChange={handleChange}
                     required
                   />
+
                 </div>
 
               </div>
@@ -173,7 +214,10 @@ function Contact() {
               <div className="form-row">
 
                 <div className="form-group">
-                  <label>Phone Number</label>
+
+                  <label>
+                    Phone Number
+                  </label>
 
                   <input
                     type="tel"
@@ -183,43 +227,24 @@ function Contact() {
                     onChange={handleChange}
                     required
                   />
+
                 </div>
 
 
                 <div className="form-group">
-                  <label>Subject</label>
 
-                  <select
+                  <label>
+                    Subject
+                  </label>
+
+                  <input
+                    type="text"
                     name="subject"
+                    placeholder="Enter subject"
                     value={formData.subject}
                     onChange={handleChange}
                     required
-                  >
-                    <option value="">
-                      Select Subject
-                    </option>
-
-                    <option value="admission">
-                      Admission Enquiry
-                    </option>
-
-                    <option value="courses">
-                      Course Enquiry
-                    </option>
-
-                    <option value="fees">
-                      Fees Enquiry
-                    </option>
-
-                    <option value="batch">
-                      Batch Enquiry
-                    </option>
-
-                    <option value="other">
-                      Other
-                    </option>
-
-                  </select>
+                  />
 
                 </div>
 
@@ -228,7 +253,9 @@ function Contact() {
 
               <div className="form-group">
 
-                <label>Message</label>
+                <label>
+                  Message
+                </label>
 
                 <textarea
                   name="message"
@@ -244,9 +271,9 @@ function Contact() {
 
               <button
                 type="submit"
-                className="send-button"
+                className="send-btn"
               >
-                Send Message →
+                Send Message
               </button>
 
             </form>
@@ -258,15 +285,98 @@ function Contact() {
       </section>
 
 
-      {/* Why Contact */}
-      <section className="contact-bottom">
+      {/* =========================
+          WHY CONTACT US
+          ========================= */}
 
-        <h2>Have Questions?</h2>
+      <section className="contact-features">
+
+        <h2>How Can We Help You?</h2>
+
+        <div className="contact-feature-grid">
+
+          <div className="contact-feature-card">
+
+            <div>📚</div>
+
+            <h3>Course Information</h3>
+
+            <p>
+              Get complete information about
+              our courses and batches.
+            </p>
+
+          </div>
+
+
+          <div className="contact-feature-card">
+
+            <div>💰</div>
+
+            <h3>Fee Enquiry</h3>
+
+            <p>
+              Contact us to know about course
+              fees and payment options.
+            </p>
+
+          </div>
+
+
+          <div className="contact-feature-card">
+
+            <div>📝</div>
+
+            <h3>Admission</h3>
+
+            <p>
+              Get assistance with registration
+              and admission procedures.
+            </p>
+
+          </div>
+
+
+          <div className="contact-feature-card">
+
+            <div>💬</div>
+
+            <h3>General Enquiry</h3>
+
+            <p>
+              We are happy to answer all your
+              questions and queries.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      {/* =========================
+          MAP
+          ========================= */}
+
+      <section className="map-section">
+
+        <h2>Find Us On Map</h2>
 
         <p>
-          Contact us today to know more about courses, admission,
-          batches, fees and scholarship/NMMS preparation.
+          Visit Kaizen Coaching Class
         </p>
+
+        <div className="map-container">
+
+          <iframe
+            title="Kaizen Coaching Class Location"
+            src="https://www.google.com/maps?q=Satara,Maharashtra,India&output=embed"
+            loading="lazy"
+            allowFullScreen
+          ></iframe>
+
+        </div>
 
       </section>
 

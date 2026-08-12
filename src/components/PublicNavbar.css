@@ -1,0 +1,164 @@
+.public-navbar {
+  width: 100%;
+  min-height: 78px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 5%;
+
+  background: #ffffff;
+
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+
+  position: relative;
+  z-index: 1000;
+}
+
+
+/* Logo */
+
+.public-logo {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  text-decoration: none;
+
+  color: #0755a5;
+
+  font-size: 20px;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+
+.logo-icon {
+  font-size: 32px;
+}
+
+
+/* Links */
+
+.public-nav-links {
+  display: flex;
+
+  align-items: center;
+
+  gap: 25px;
+
+  list-style: none;
+
+  margin: 0;
+  padding: 0;
+}
+
+
+.public-nav-links a {
+  text-decoration: none;
+
+  color: #333;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  transition: 0.3s;
+}
+
+
+.public-nav-links a:hover {
+  color: #0755a5;
+}
+
+
+/* Buttons */
+
+.public-buttons {
+  display: flex;
+
+  gap: 8px;
+
+  align-items: center;
+}
+
+
+.student-login-btn,
+.admin-login-btn {
+  text-decoration: none;
+
+  padding: 9px 15px;
+
+  border-radius: 25px;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  transition: 0.3s;
+}
+
+
+/* Student Login */
+
+.student-login-btn {
+  color: #0755a5;
+
+  border: 1.5px solid #0755a5;
+}
+
+
+.student-login-btn:hover {
+  background: #0755a5;
+
+  color: white;
+}
+
+
+/* Admin Login */
+
+.admin-login-btn {
+  background: #0d6efd;
+
+  color: white;
+
+  border: 1.5px solid #0d6efd;
+}
+
+
+.admin-login-btn:hover {
+  background: #064baf;
+
+  border-color: #064baf;
+}
+
+
+/* Mobile */
+
+@media (max-width: 900px) {
+
+  .public-navbar {
+    flex-direction: column;
+
+    padding: 15px;
+
+    gap: 15px;
+  }
+
+  .public-nav-links {
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 15px;
+  }
+
+  .public-buttons {
+    justify-content: center;
+  }
+
+}

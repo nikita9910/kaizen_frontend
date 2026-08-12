@@ -1,0 +1,99 @@
+.admin-navbar {
+  min-height: 72px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 0 3%;
+
+  background: #212529;
+
+  color: white;
+
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Logo */
+
+.admin-logo {
+  color: white;
+
+  text-decoration: none;
+
+  font-size: 19px;
+
+  font-weight: bold;
+
+  white-space: nowrap;
+}
+
+
+/* Links */
+
+.admin-nav-links {
+  display: flex;
+
+  gap: 18px;
+
+  list-style: none;
+
+  margin: 0;
+
+  padding: 0;
+}
+
+
+.admin-nav-links a {
+  color: white;
+
+  text-decoration: none;
+
+  font-size: 13px;
+
+  font-weight: 500;
+}
+
+
+.admin-nav-links a:hover {
+  color: #0d6efd;
+}
+
+
+/* Logout */
+
+.admin-logout {
+  color: white;
+
+  text-decoration: none;
+
+  background: #dc3545;
+
+  padding: 8px 15px;
+
+  border-radius: 20px;
+
+  font-size: 13px;
+}
+
+
+@media (max-width: 1000px) {
+
+  .admin-navbar {
+    flex-direction: column;
+
+    gap: 15px;
+
+    padding: 15px;
+  }
+
+  .admin-nav-links {
+    flex-wrap: wrap;
+
+    justify-content: center;
+  }
+
+}

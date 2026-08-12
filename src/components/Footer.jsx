@@ -164,31 +164,7 @@ function Footer() {
       </div>
 
 
-      {/* Map Section */}
-      <div className="map-section">
-
-        <div className="map-heading">
-          <h2>Find Us</h2>
-          <p>
-            Visit Kaizen Coaching Class and start your learning journey.
-          </p>
-        </div>
-
-        <div className="map-container">
-
-          <iframe
-            title="Kaizen Coaching Class Location"
-            src="https://www.google.com/maps?q=Satara,Maharashtra,India&output=embed"
-            loading="lazy"
-            allowFullScreen
-            referrerPolicy="no-referrer-when-downgrade"
-          ></iframe>
-
-        </div>
-
-      </div>
-
-
+      
       {/* Bottom Footer */}
       <div className="footer-bottom">
 

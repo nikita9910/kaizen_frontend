@@ -1,88 +1,317 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Home.css";
 
 function Home() {
   return (
-    <>
+    <div className="home">
 
-      {/* Hero Section */}
+      {/* ================= HERO SECTION ================= */}
 
       <section className="hero">
 
         <div className="hero-content">
 
-          <h1>Welcome to Kaizen Coaching Class</h1>
+          <div className="hero-badge">
+            🎓 KAIZEN COACHING CLASS
+          </div>
 
-          <p>
-            Learn from experienced teachers and build your future with
-            quality education.
+          <h1>
+            Build Your Future
+            <span> With Kaizen</span>
+          </h1>
+
+          <p className="hero-subtitle">
+            Learn • Practice • Improve • Succeed
           </p>
 
-          <button>Explore Courses</button>
+          <p className="hero-description">
+            Quality education, expert guidance and personal attention
+            to help every student achieve their goals.
+          </p>
+
+          <div className="hero-buttons">
+            <Link to="/courses" className="primary-btn">
+              Explore Courses →
+            </Link>
+
+            <Link to="/registration" className="secondary-btn">
+              Join Now
+            </Link>
+          </div>
+
+        </div>
+
+
+        {/* HERO COURSE BOX */}
+
+        <div className="hero-course-box">
+
+          <div className="course-box-title">
+            <span>📚</span>
+            Courses We Offer
+          </div>
+
+          <div className="hero-course-list">
+
+            <div className="hero-course-item">
+              <span className="number">01</span>
+              <div>
+                <strong>7th to 10th</strong>
+                <small>State Board</small>
+              </div>
+            </div>
+
+            <div className="hero-course-item">
+              <span className="number">02</span>
+              <div>
+                <strong>5th to 10th</strong>
+                <small>CBSE</small>
+              </div>
+            </div>
+
+            <div className="hero-course-item">
+              <span className="number">03</span>
+              <div>
+                <strong>11th & 12th</strong>
+                <small>Science</small>
+              </div>
+            </div>
+
+            <div className="hero-course-item">
+              <span className="number">04</span>
+              <div>
+                <strong>Scholarship</strong>
+                <small>NMMS Preparation</small>
+              </div>
+            </div>
+
+          </div>
 
         </div>
 
       </section>
 
 
+      {/* ================= COURSE SECTION ================= */}
 
-      {/* About */}
+      <section className="courses-section">
 
-      <section className="about">
+        <div className="section-heading">
+          <p>WHAT WE OFFER</p>
 
-        <div className="container">
+          <h2>
+            Education For Every
+            <span> Bright Mind</span>
+          </h2>
 
-          <div className="about-text">
+          <div className="heading-line"></div>
+        </div>
 
-            <h2>About Us</h2>
+
+        <div className="course-cards">
+
+          {/* CARD 1 */}
+
+          <div className="course-card">
+
+            <div className="card-icon">
+              📘
+            </div>
+
+            <span className="card-tag">
+              STATE BOARD
+            </span>
+
+            <h3>
+              7th to 10th
+            </h3>
 
             <p>
-
-              Kizen Coaching Class provides high-quality education with
-              experienced faculty, modern classrooms, study materials,
-              assignments, online attendance, and examination facilities.
-
+              Complete academic preparation with strong
+              fundamentals and exam-focused learning.
             </p>
 
+            <Link to="/courses">
+              Learn More →
+            </Link>
+
           </div>
 
-          <img
-            src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600"
-            alt=""
-          />
+
+          {/* CARD 2 */}
+
+          <div className="course-card featured">
+
+            <div className="card-icon">
+              🎓
+            </div>
+
+            <span className="card-tag">
+              CBSE
+            </span>
+
+            <h3>
+              5th to 10th
+            </h3>
+
+            <p>
+              Concept-based learning designed to improve
+              understanding, confidence and performance.
+            </p>
+
+            <Link to="/courses">
+              Learn More →
+            </Link>
+
+          </div>
+
+
+          {/* CARD 3 */}
+
+          <div className="course-card">
+
+            <div className="card-icon">
+              🔬
+            </div>
+
+            <span className="card-tag">
+              SCIENCE
+            </span>
+
+            <h3>
+              11th & 12th
+            </h3>
+
+            <p>
+              Focused science coaching for board examinations
+              and a strong academic foundation.
+            </p>
+
+            <Link to="/courses">
+              Learn More →
+            </Link>
+
+          </div>
+
+
+          {/* CARD 4 */}
+
+          <div className="course-card">
+
+            <div className="card-icon">
+              🏆
+            </div>
+
+            <span className="card-tag">
+              SCHOLARSHIP
+            </span>
+
+            <h3>
+              NMMS
+            </h3>
+
+            <p>
+              Special preparation and guidance for scholarship
+              examinations and competitive success.
+            </p>
+
+            <Link to="/courses">
+              Learn More →
+            </Link>
+
+          </div>
 
         </div>
 
       </section>
 
 
+      {/* ================= WHY KAIZEN ================= */}
 
-      {/* Features */}
+      <section className="why-section">
 
-      <section className="features">
+        <div className="why-content">
 
-        <h2>Our Features</h2>
+          <div className="why-text">
 
-        <div className="feature-box">
+            <p className="small-title">
+              WHY CHOOSE KAIZEN?
+            </p>
 
-          <div className="card">
-            <h3>📚 Study Material</h3>
-            <p>Access notes, PDFs and recorded lectures.</p>
+            <h2>
+              More Than Just
+              <span> Classroom Learning</span>
+            </h2>
+
+            <p>
+              At Kaizen Coaching Class, we believe every student
+              has the potential to achieve something great.
+              Our teaching approach focuses on concepts,
+              practice and continuous improvement.
+            </p>
+
+            <div className="features">
+
+              <div className="feature">
+                <span>✓</span>
+                <div>
+                  <h4>Expert Guidance</h4>
+                  <p>Learn from experienced teachers.</p>
+                </div>
+              </div>
+
+              <div className="feature">
+                <span>✓</span>
+                <div>
+                  <h4>Personal Attention</h4>
+                  <p>Individual attention for every student.</p>
+                </div>
+              </div>
+
+              <div className="feature">
+                <span>✓</span>
+                <div>
+                  <h4>Regular Practice</h4>
+                  <p>Tests and practice to improve performance.</p>
+                </div>
+              </div>
+
+              <div className="feature">
+                <span>✓</span>
+                <div>
+                  <h4>Student Success</h4>
+                  <p>Focused learning for better results.</p>
+                </div>
+              </div>
+
+            </div>
+
           </div>
 
-          <div className="card">
-            <h3>👨‍🏫 Expert Faculty</h3>
-            <p>Learn from highly qualified teachers.</p>
-          </div>
 
-          <div className="card">
-            <h3>📝 Online Exams</h3>
-            <p>Practice and improve with online tests.</p>
-          </div>
+          <div className="success-box">
 
-          <div className="card">
-            <h3>📈 Progress Report</h3>
-            <p>Track attendance and academic performance.</p>
+            <div className="success-circle">
+              🎓
+            </div>
+
+            <h3>
+              Learn
+            </h3>
+
+            <span>↓</span>
+
+            <h3>
+              Practice
+            </h3>
+
+            <span>↓</span>
+
+            <h3>
+              Succeed
+            </h3>
+
           </div>
 
         </div>
@@ -90,136 +319,63 @@ function Home() {
       </section>
 
 
+      {/* ================= STATS ================= */}
 
-      {/* Courses */}
+      <section className="stats-section">
 
-      <section className="courses">
+        <div className="stat">
+          <strong>4+</strong>
+          <span>Programs</span>
+        </div>
 
-        <h2>Popular Courses</h2>
+        <div className="stat">
+          <strong>7th–12th</strong>
+          <span>Classes</span>
+        </div>
 
-        <div className="course-box">
+        <div className="stat">
+          <strong>100%</strong>
+          <span>Dedication</span>
+        </div>
 
-          <div className="course-card">
-            <h3>Python</h3>
-            <p>Beginner to Advanced</p>
-          </div>
-
-          <div className="course-card">
-            <h3>Java</h3>
-            <p>Core & Advanced Java</p>
-          </div>
-
-          <div className="course-card">
-            <h3>Web Development</h3>
-            <p>HTML CSS JavaScript React Django</p>
-          </div>
-
-          <div className="course-card">
-            <h3>Database</h3>
-            <p>SQL & MySQL</p>
-          </div>
-
+        <div className="stat">
+          <strong>1</strong>
+          <span>Goal — Success</span>
         </div>
 
       </section>
 
 
+      {/* ================= CTA ================= */}
 
-      {/* Statistics */}
-
-      <section className="stats">
+      <section className="cta-section">
 
         <div>
 
-          <h1>1000+</h1>
+          <p>READY TO START?</p>
 
-          <p>Students</p>
+          <h2>
+            Give Your Child The
+            <span> Right Direction.</span>
+          </h2>
 
-        </div>
-
-        <div>
-
-          <h1>25+</h1>
-
-          <p>Courses</p>
-
-        </div>
-
-        <div>
-
-          <h1>20+</h1>
-
-          <p>Faculty</p>
+          <p>
+            Join Kaizen Coaching Class and take the next step
+            towards a brighter academic future.
+          </p>
 
         </div>
 
-        <div>
-
-          <h1>98%</h1>
-
-          <p>Success Rate</p>
-
-        </div>
+        <Link
+          to="/registration"
+          className="cta-button"
+        >
+          Register Now →
+        </Link>
 
       </section>
 
-
-
-      {/* Why Choose */}
-
-      <section className="choose">
-
-        <h2>Why Choose Kizen?</h2>
-
-        <div className="choose-grid">
-
-          <div>
-            ✅ Experienced Teachers
-          </div>
-
-          <div>
-            ✅ Modern Learning Environment
-          </div>
-
-          <div>
-            ✅ Affordable Fees
-          </div>
-
-          <div>
-            ✅ Online Study Material
-          </div>
-
-          <div>
-            ✅ Career Guidance
-          </div>
-
-          <div>
-            ✅ Placement Assistance
-          </div>
-
-        </div>
-
-      </section>
-
-
-
-      {/* Footer */}
-
-      <footer>
-
-        <h3>Kaizen Coaching Class</h3>
-
-        <p>
-          Empowering Students Through Quality Education
-        </p>
-
-        <p>
-          © 2026 All Rights Reserved
-        </p>
-
-      </footer>
-
-    </>
+    </div>
   );
 }
 
