@@ -15,7 +15,18 @@ import StudentLogin from "./pages/StudentLogin";
 import AdminLogin from "./pages/AdminLogin";
 import Login from "./pages/Login";
 
+// Admin
+import ManageAssignments from "./pages/ManageAssignments";
+import ManageAttendance from "./pages/ManageAttendance";
+import ManageBatches from "./pages/ManageBatches";
+import MangeCourses from "./pages/ManageCourses";
+import ManageExams from "./pages/ManageExams";
 import ManageFaculty from "./pages/ManageFaculty";
+import ManageFeedback from "./pages/ManageFeedback";
+import ManageFees from "./pages/ManageFees";
+import ManageNotices from "./pages/ManageNotices";
+import ManageStudents from "./pages/ManageStudents";
+import ManageStudyMaterial from "./pages/ManageStudyMaterial";
 
 function App() {
   return (
@@ -34,9 +45,19 @@ function App() {
         <Route path="/adminlogin" element={<AdminLogin/>} />
         <Route path="/login" element={<Login/>} />
 
+        {/* admin */}
         <Route path="/managefaculty" element={<ManageFaculty/>} />
-
-
+        <Route path="/manageassignments" element={<ManageAssignments/>} />
+        <Route path="/manageattendance" element={<ManageAttendance/>} />
+        <Route path="managebatches" element={<ManageBatches/>} />
+        <Route path="managecourses" element={<ManageBatches/>} />
+        <Route path="manageexams" element={<ManageExams/>} />
+        <Route path="managefees" element={<ManageFees/>} />
+        <Route path="managefeedback" element={<ManageFeedback/>} />
+        <Route path="managenotices" element={<ManageNotices/>} />
+        <Route path="managestudents" element={<ManageStudents/>} />
+        <Route path="managestudymaterial" element={<ManageStudyMaterial/>} />
+        
       </Routes>
 
       <Footer />
