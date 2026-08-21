@@ -1,261 +1,69 @@
-/* Main Page */
-
-.courses-page {
-  width: 100%;
-  background: #f5f9ff;
+/* Courses Grid */
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    width: 100%;
+    margin-top: 30px;
 }
-
-
-/* Header */
-
-.courses-header {
-  text-align: center;
-  padding: 70px 20px;
-
-  background: linear-gradient(
-    135deg,
-    #0755a5,
-    #0d6efd
-  );
-
-  color: white;
-}
-
-.courses-header h1 {
-  font-size: 42px;
-  margin-bottom: 12px;
-}
-
-.courses-header p {
-  font-size: 18px;
-}
-
-
-/* Courses Section */
-
-.courses-section {
-  padding: 60px 6%;
-}
-
-.courses-container {
-  max-width: 1200px;
-  margin: auto;
-
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-
-  gap: 25px;
-}
-
 
 /* Course Card */
-
 .course-card {
-  background: white;
-
-  padding: 30px 25px;
-
-  border-radius: 15px;
-
-  text-align: center;
-
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-
-  transition: 0.3s;
-
-  border-top: 5px solid #0d6efd;
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 30px 25px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: 0.3s ease;
 }
 
 .course-card:hover {
-  transform: translateY(-8px);
-
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
-
-
-/* Icon */
 
 .course-icon {
-  font-size: 45px;
-
-  margin-bottom: 15px;
-}
-
-
-/* Course Title */
-
-.course-card h2 {
-  color: #0755a5;
-
-  font-size: 25px;
-
-  margin-bottom: 8px;
+    font-size: 45px;
+    margin-bottom: 15px;
 }
 
 .course-card h3 {
-  color: #0d6efd;
-
-  font-size: 18px;
-
-  margin-bottom: 15px;
+    font-size: 22px;
+    margin-bottom: 15px;
 }
 
-
-/* Description */
-
-.course-card p {
-  color: #666;
-
-  line-height: 1.6;
-
-  min-height: 100px;
+.course-duration {
+    margin-bottom: 10px;
 }
 
-
-/* List */
-
-.course-card ul {
-  list-style: none;
-
-  padding: 0;
-
-  margin: 20px 0;
-
-  text-align: left;
+.course-description {
+    line-height: 1.6;
+    margin-bottom: 15px;
 }
 
-.course-card li {
-  padding: 6px 0;
-
-  color: #444;
-
-  font-size: 14px;
+.course-fees {
+    font-size: 18px;
+    margin-bottom: 20px;
 }
-
-
-/* Button */
 
 .course-btn {
-  display: inline-block;
-
-  text-decoration: none;
-
-  background: #0d6efd;
-
-  color: white;
-
-  padding: 11px 25px;
-
-  border-radius: 25px;
-
-  font-weight: bold;
-
-  transition: 0.3s;
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
 }
-
-.course-btn:hover {
-  background: #0755a5;
-
-  transform: scale(1.05);
-}
-
-
-/* Why Choose Us */
-
-.why-section {
-  background: white;
-
-  padding: 60px 6%;
-
-  text-align: center;
-}
-
-.why-section > h2 {
-  font-size: 32px;
-
-  color: #0755a5;
-
-  margin-bottom: 40px;
-}
-
-.why-container {
-  max-width: 1100px;
-
-  margin: auto;
-
-  display: grid;
-
-  grid-template-columns: repeat(4, 1fr);
-
-  gap: 25px;
-}
-
-.why-box {
-  padding: 25px;
-
-  border-radius: 12px;
-
-  background: #f5f9ff;
-
-  transition: 0.3s;
-}
-
-.why-box:hover {
-  transform: translateY(-5px);
-
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-}
-
-.why-box span {
-  font-size: 35px;
-}
-
-.why-box h3 {
-  color: #0755a5;
-
-  margin: 12px 0;
-}
-
-.why-box p {
-  color: #666;
-
-  line-height: 1.5;
-}
-
 
 /* Tablet */
-
-@media (max-width: 1000px) {
-
-  .courses-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .why-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
+@media (max-width: 900px) {
+    .courses-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
-
 /* Mobile */
-
 @media (max-width: 600px) {
-
-  .courses-header h1 {
-    font-size: 32px;
-  }
-
-  .courses-container {
-    grid-template-columns: 1fr;
-  }
-
-  .why-container {
-    grid-template-columns: 1fr;
-  }
-
-  .courses-section {
-    padding: 40px 20px;
-  }
-
+    .courses-grid {
+        grid-template-columns: 1fr;
+    }
 }

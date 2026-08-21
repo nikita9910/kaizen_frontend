@@ -1,51 +1,37 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Faculty.css";
+import API from "../api";
 
 function Faculty() {
-  const faculty = [
-    {
-      name: "Prof. Rahul Patil",
-      subject: "Mathematics",
-      qualification: "M.Sc. Mathematics",
-      experience: "8+ Years Experience",
-      icon: "👨‍🏫",
-    },
-    {
-      name: "Prof. Priya Sharma",
-      subject: "Science",
-      qualification: "M.Sc. Physics",
-      experience: "7+ Years Experience",
-      icon: "👩‍🏫",
-    },
-    {
-      name: "Prof. Amit Deshmukh",
-      subject: "English",
-      qualification: "M.A. English",
-      experience: "6+ Years Experience",
-      icon: "👨‍🏫",
-    },
-    {
-      name: "Prof. Sneha Jadhav",
-      subject: "Computer Science",
-      qualification: "MCA",
-      experience: "5+ Years Experience",
-      icon: "👩‍💻",
-    },
-    {
-      name: "Prof. Akshay More",
-      subject: "Chemistry",
-      qualification: "M.Sc. Chemistry",
-      experience: "8+ Years Experience",
-      icon: "👨‍🔬",
-    },
-    {
-      name: "Prof. Neha Kulkarni",
-      subject: "Biology",
-      qualification: "M.Sc. Biology",
-      experience: "6+ Years Experience",
-      icon: "👩‍🔬",
-    },
-  ];
+  const [faculty, setFaculty] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+
+  // Fetch faculty from Django backend
+  useEffect(() => {
+    fetchFaculty();
+  }, []);
+
+  const fetchFaculty = async () => {
+    try {
+      setLoading(true);
+      setError("");
+
+      const response = await API.get("faculty/");
+
+      console.log("Faculty data:", response.data);
+
+      setFaculty(response.data);
+    } catch (err) {
+      console.error("Error fetching faculty:", err);
+
+      setError(
+        "Unable to load faculty. Please make sure Django server is running."
+      );
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div className="faculty-page">
@@ -83,37 +69,113 @@ function Faculty() {
 
         <div className="faculty-grid">
 
-          {faculty.map((teacher, index) => (
-
-            <div className="faculty-card" key={index}>
-
-              <div className="faculty-icon">
-                {teacher.icon}
-              </div>
-
-              <h3>{teacher.name}</h3>
-
-              <h4>{teacher.subject}</h4>
+          {/* LOADING */}
+          {loading && (
+            <div className="faculty-message">
+              <h3>Loading Faculty...</h3>
 
               <p>
-                <strong>Qualification:</strong>
-                <br />
-                {teacher.qualification}
+                Please wait while we load our faculty members.
               </p>
+            </div>
+          )}
 
-              <p>
-                <strong>Experience:</strong>
-                <br />
-                {teacher.experience}
-              </p>
 
-              <button className="faculty-btn">
-                View Profile
+          {/* ERROR */}
+          {!loading && error && (
+            <div className="faculty-message">
+
+              <h3>Unable to Load Faculty</h3>
+
+              <p>{error}</p>
+
+              <button
+                className="faculty-btn"
+                onClick={fetchFaculty}
+              >
+                Try Again
               </button>
 
             </div>
+          )}
 
-          ))}
+
+          {/* NO FACULTY */}
+          {!loading &&
+            !error &&
+            faculty.length === 0 && (
+
+              <div className="faculty-message">
+
+                <h3>No Faculty Available</h3>
+
+                <p>
+                  Faculty information will be available soon.
+                </p>
+
+              </div>
+            )}
+
+
+          {/* FACULTY CARDS */}
+          {!loading &&
+            !error &&
+            faculty.map((teacher, index) => (
+
+              <div
+                className="faculty-card"
+                key={teacher.id || index}
+              >
+
+                {/* Faculty Icon */}
+                <div className="faculty-icon">
+                  {teacher.icon || "👨‍🏫"}
+                </div>
+
+
+                {/* Faculty Name */}
+                <h3>
+                  {teacher.name ||
+                    `${teacher.first_name || ""} ${teacher.last_name || ""}`}
+                </h3>
+
+
+                {/* Subject */}
+                <h4>
+                  {teacher.subject || "Faculty"}
+                </h4>
+
+
+                {/* Specialization */}
+                <p>
+                  <strong>Specialization:</strong>
+                  <br />
+
+                  {teacher.specialization ||
+                    teacher.qualification ||
+                    "Not Available"}
+                </p>
+
+
+                {/* Mobile Number */}
+                <p>
+                  <strong>Mobile No.:</strong>
+                  <br />
+
+                  {teacher.mobile ||
+                    teacher.phone ||
+                    "Not Available"}
+                </p>
+
+
+                {/* View Profile */}
+                <button className="faculty-btn">
+                  View Profile
+                </button>
+
+              </div>
+
+            ))}
 
         </div>
 
@@ -129,34 +191,45 @@ function Faculty() {
 
           <div className="faculty-feature">
             <span>🎓</span>
+
             <h3>Qualified Teachers</h3>
+
             <p>
               Highly qualified teachers with strong
               subject knowledge.
             </p>
           </div>
 
+
           <div className="faculty-feature">
             <span>💡</span>
+
             <h3>Easy Explanation</h3>
+
             <p>
               Complex concepts are explained using
               simple and practical methods.
             </p>
           </div>
 
+
           <div className="faculty-feature">
             <span>🎯</span>
+
             <h3>Personal Attention</h3>
+
             <p>
               Individual guidance to improve every
               student's performance.
             </p>
           </div>
 
+
           <div className="faculty-feature">
             <span>🏆</span>
+
             <h3>Result Oriented</h3>
+
             <p>
               Focus on academic growth and better
               examination results.

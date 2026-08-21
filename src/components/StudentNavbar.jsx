@@ -1,91 +1,147 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import "./Auth.css";
 
-import "./StudentNavbar.css";
+function StudentLogin() {
+  const navigate = useNavigate();
 
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
 
-function StudentNavbar() {
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // Temporary frontend login
+    // Later connect this with Django API
+
+    if (formData.email && formData.password) {
+      navigate("/student-dashboard");
+    }
+  };
 
   return (
+    <div className="auth-page">
 
-    <nav className="student-navbar">
+      <div className="auth-container">
 
-      {/* Logo */}
+        {/* LEFT SIDE */}
 
-      <Link
-        to="/student-dashboard"
-        className="student-logo"
-      >
+        <div className="auth-welcome">
 
-        🎓 Kaizen Student
+          <div className="welcome-icon">🎓</div>
 
-      </Link>
+          <h1>Welcome Back!</h1>
 
+          <h2>Kaizen Coaching Class</h2>
 
-      {/* Links */}
+          <p>
+            Login to access your courses, attendance,
+            study materials, examinations and results.
+          </p>
 
-      <ul className="student-nav-links">
+          <div className="welcome-features">
+            <span>📚 Courses</span>
+            <span>📊 Attendance</span>
+            <span>📝 Exams</span>
+            <span>🏆 Results</span>
+          </div>
 
-        <li>
-          <Link to="/student-dashboard">
-            Dashboard
-          </Link>
-        </li>
-
-        <li>
-          <Link to="/student-courses">
-            My Courses
-          </Link>
-        </li>
-
-        <li>
-          <Link to="/student-attendance">
-            Attendance
-          </Link>
-        </li>
-
-        <li>
-          <Link to="/student-material">
-            Study Material
-          </Link>
-        </li>
-
-        <li>
-          <Link to="/student-exams">
-            Exams
-          </Link>
-        </li>
-
-        <li>
-          <Link to="/student-results">
-            Results
-          </Link>
-        </li>
-
-      </ul>
+        </div>
 
 
-      {/* Profile */}
+        {/* RIGHT SIDE */}
 
-      <div className="student-profile">
+        <div className="auth-form-container">
 
-        <Link to="/student-profile">
-          👤 Profile
-        </Link>
+          <h2>Student Login</h2>
 
-        <Link
-          to="/"
-          className="student-logout"
-        >
-          Logout
-        </Link>
+          <p className="auth-subtitle">
+            Login to your student account
+          </p>
+
+          <form onSubmit={handleSubmit}>
+
+            <div className="auth-form-group">
+
+              <label>Email Address</label>
+
+              <input
+                type="email"
+                name="email"
+                placeholder="Enter your email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+              />
+
+            </div>
+
+
+            <div className="auth-form-group">
+
+              <label>Password</label>
+
+              <input
+                type="password"
+                name="password"
+                placeholder="Enter your password"
+                value={formData.password}
+                onChange={handleChange}
+                required
+              />
+
+            </div>
+
+
+            <div className="remember-row">
+
+              <label>
+                <input type="checkbox" />
+                Remember me
+              </label>
+
+              <a href="#forgot">
+                Forgot Password?
+              </a>
+
+            </div>
+
+
+            <button
+              type="submit"
+              className="auth-btn"
+            >
+              Login
+            </button>
+
+          </form>
+
+
+          <p className="auth-bottom-text">
+
+            Don't have an account?
+
+            <Link to="/registration">
+              Register Now
+            </Link>
+
+          </p>
+
+        </div>
 
       </div>
 
-    </nav>
-
+    </div>
   );
 }
 
-
-export default StudentNavbar;
+export default StudentLogin;

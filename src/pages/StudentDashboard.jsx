@@ -1,72 +1,282 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./StudentDashboard.css";
 
 function StudentDashboard() {
+
+  const navigate = useNavigate();
+
+  // Get logged-in student information
+  const user = JSON.parse(
+    localStorage.getItem("user")
+  );
+
+
+  // ============================
+  // LOGOUT
+  // ============================
+
+  const handleLogout = () => {
+
+    localStorage.removeItem("user");
+    localStorage.removeItem("userType");
+
+    navigate("/student-login");
+
+  };
+
+
   return (
+
     <div className="student-dashboard">
 
+
+      {/* =========================
+          DASHBOARD HEADER
+          ========================= */}
+
       <div className="dashboard-header">
+
         <div>
-          <h1>Welcome, Student! 👋</h1>
-          <p>Welcome to your Kaizen Coaching Class dashboard.</p>
+
+          <h1>
+            Welcome,{" "}
+            {user?.first_name || "Student"}! 👋
+          </h1>
+
+          <p>
+            Welcome to your Kaizen Coaching Class dashboard.
+          </p>
+
         </div>
+
+
+        {/* LOGOUT BUTTON */}
+
+        <button
+          className="dashboard-logout"
+          onClick={handleLogout}
+        >
+          Logout
+        </button>
+
       </div>
+
+
+
+      {/* =========================
+          STUDENT INFORMATION
+          ========================= */}
+
+      <div className="student-info">
+
+        <div className="student-profile-icon">
+          👤
+        </div>
+
+
+        <div className="student-details">
+
+          <h2>
+            {user?.first_name}{" "}
+            {user?.last_name}
+          </h2>
+
+          <p>
+            📧 {user?.email}
+          </p>
+
+          <p>
+            📱 {user?.mobile}
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      {/* =========================
+          DASHBOARD CARDS
+          ========================= */}
 
       <div className="dashboard-cards">
 
-        <Link to="/student-courses" className="dashboard-card">
+
+        {/* MY COURSES */}
+
+        <Link
+          to="/student-courses"
+          className="dashboard-card"
+        >
+
           <span>📚</span>
-          <h3>My Courses</h3>
-          <p>View your enrolled courses.</p>
+
+          <h3>
+            My Courses
+          </h3>
+
+          <p>
+            View your enrolled courses.
+          </p>
+
         </Link>
 
-        <Link to="/student-attendance" className="dashboard-card">
+
+
+        {/* ATTENDANCE */}
+
+        <Link
+          to="/student-attendance"
+          className="dashboard-card"
+        >
+
           <span>📅</span>
-          <h3>Attendance</h3>
-          <p>Check your attendance.</p>
+
+          <h3>
+            Attendance
+          </h3>
+
+          <p>
+            Check your attendance.
+          </p>
+
         </Link>
 
-        <Link to="/student-material" className="dashboard-card">
+
+
+        {/* STUDY MATERIAL */}
+
+        <Link
+          to="/student-material"
+          className="dashboard-card"
+        >
+
           <span>📖</span>
-          <h3>Study Material</h3>
-          <p>Access learning materials.</p>
+
+          <h3>
+            Study Material
+          </h3>
+
+          <p>
+            Access learning materials.
+          </p>
+
         </Link>
 
-        <Link to="/student-assignments" className="dashboard-card">
+
+
+        {/* ASSIGNMENTS */}
+
+        <Link
+          to="/student-assignments"
+          className="dashboard-card"
+        >
+
           <span>📝</span>
-          <h3>Assignments</h3>
-          <p>View and submit assignments.</p>
+
+          <h3>
+            Assignments
+          </h3>
+
+          <p>
+            View and submit assignments.
+          </p>
+
         </Link>
 
-        <Link to="/student-exams" className="dashboard-card">
+
+
+        {/* ONLINE EXAMS */}
+
+        <Link
+          to="/student-exams"
+          className="dashboard-card"
+        >
+
           <span>💻</span>
-          <h3>Online Exams</h3>
-          <p>Attempt online examinations.</p>
+
+          <h3>
+            Online Exams
+          </h3>
+
+          <p>
+            Attempt online examinations.
+          </p>
+
         </Link>
 
-        <Link to="/student-results" className="dashboard-card">
+
+
+        {/* RESULTS */}
+
+        <Link
+          to="/student-results"
+          className="dashboard-card"
+        >
+
           <span>🏆</span>
-          <h3>Results</h3>
-          <p>Check your examination results.</p>
+
+          <h3>
+            Results
+          </h3>
+
+          <p>
+            Check your examination results.
+          </p>
+
         </Link>
 
-        <Link to="/student-fees" className="dashboard-card">
+
+
+        {/* FEES */}
+
+        <Link
+          to="/student-fees"
+          className="dashboard-card"
+        >
+
           <span>💳</span>
-          <h3>Fees</h3>
-          <p>View your fee information.</p>
+
+          <h3>
+            Fees
+          </h3>
+
+          <p>
+            View your fee information.
+          </p>
+
         </Link>
 
-        <Link to="/student-profile" className="dashboard-card">
+
+
+        {/* PROFILE */}
+
+        <Link
+          to="/student-profile"
+          className="dashboard-card"
+        >
+
           <span>👤</span>
-          <h3>My Profile</h3>
-          <p>View and update your profile.</p>
+
+          <h3>
+            My Profile
+          </h3>
+
+          <p>
+            View and update your profile.
+          </p>
+
         </Link>
+
 
       </div>
 
+
     </div>
+
   );
 }
+
 
 export default StudentDashboard;

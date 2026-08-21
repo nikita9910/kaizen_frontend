@@ -1,150 +1,133 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import API from "../api";
 import "./Login.css";
-
 
 function Login() {
 
   const navigate = useNavigate();
 
-
   const [formData, setFormData] = useState({
-
     email: "",
     password: ""
-
   });
 
-
   const [error, setError] = useState("");
-
   const [loading, setLoading] = useState(false);
 
+
+  // =================================
+  // HANDLE INPUT
+  // =================================
 
   const handleChange = (e) => {
 
     setFormData({
-
       ...formData,
-
       [e.target.name]: e.target.value
-
     });
 
     setError("");
-
   };
 
+
+  // =================================
+  // LOGIN
+  // =================================
 
   const handleSubmit = async (e) => {
 
     e.preventDefault();
 
     setError("");
-
     setLoading(true);
-
 
     try {
 
-      const response = await fetch(
-
-        "http://127.0.0.1:8000/api/login/",
-
+      const response = await API.post(
+        "login/",
         {
-
-          method: "POST",
-
-          headers: {
-
-            "Content-Type": "application/json"
-
-          },
-
-          body: JSON.stringify({
-
-            email: formData.email,
-
-            password: formData.password
-
-          })
-
+          email: formData.email,
+          password: formData.password
         }
-
       );
 
+      console.log("Login response:", response.data);
 
-      const data = await response.json();
-
-
-      if (response.ok && data.success) {
+      const data = response.data;
 
 
-        // =========================================
-        // SAVE LOGIN INFORMATION
-        // =========================================
+      // =================================
+      // LOGIN SUCCESS
+      // =================================
 
+      if (data.success) {
+
+        // Save user type
         localStorage.setItem(
-
           "userType",
-
           data.user_type
-
         );
 
 
+        // Save user information
         localStorage.setItem(
-
           "user",
-
           JSON.stringify(data.user)
-
         );
 
 
-        // =========================================
-        // AUTOMATIC ROLE CHECK
-        // =========================================
+        // =================================
+        // ADMIN
+        // =================================
 
         if (data.user_type === "admin") {
 
+          alert("Admin login successful!");
+
           navigate("/admin-dashboard");
 
+          return;
         }
 
-        else if (
-          data.user_type === "student"
-        ) {
+
+        // =================================
+        // STUDENT
+        // =================================
+
+        if (data.user_type === "student") {
+
+          alert("Student login successful!");
 
           navigate("/student-dashboard");
 
+          return;
         }
 
-
       }
 
-      else {
 
-        setError(
+      // =================================
+      // LOGIN FAILED
+      // =================================
 
-          data.message ||
-          "Invalid email or password."
-
-        );
-
-      }
-
+      setError(
+        data.message ||
+        "Invalid email or password."
+      );
 
     }
 
     catch (error) {
 
-      console.error(error);
+      console.error(
+        "Login error:",
+        error.response?.data || error
+      );
 
       setError(
-
-        "Cannot connect to Django server. Please start the backend."
-
+        error.response?.data?.message ||
+        "Cannot connect to Django server."
       );
 
     }
@@ -162,172 +145,128 @@ function Login() {
 
     <div className="auth-page">
 
-
       <div className="login-container">
 
 
-        {/* LEFT SECTION */}
+        {/* =========================
+            LEFT SECTION
+            ========================= */}
 
         <div className="login-welcome">
 
-
           <div className="login-logo">
-
             🎓
-
           </div>
 
-
           <h1>
-
             Kaizen Coaching Class
-
           </h1>
 
-
           <h2>
-
             Welcome Back!
-
           </h2>
 
-
           <p>
-
             Login to access your account
             and continue your learning journey.
-
           </p>
 
 
           <div className="login-features">
 
-
             <div>
-
               📚
-
               <span>
                 Courses
               </span>
-
             </div>
 
-
             <div>
-
               📊
-
               <span>
                 Attendance
               </span>
-
             </div>
 
-
             <div>
-
               📝
-
               <span>
                 Exams
               </span>
-
             </div>
 
-
             <div>
-
               🏆
-
               <span>
                 Results
               </span>
-
             </div>
 
-
           </div>
-
 
         </div>
 
 
-        {/* RIGHT SECTION */}
+
+        {/* =========================
+            RIGHT SECTION
+            ========================= */}
 
         <div className="login-form-container">
-
 
           <h2>
             Login
           </h2>
 
-
           <p className="login-subtitle">
-
             Login to your Kaizen account
-
           </p>
 
 
           <form onSubmit={handleSubmit}>
 
 
-            <div className="auth-form-group">
+            {/* EMAIL */}
 
+            <div className="auth-form-group">
 
               <label>
                 Email
               </label>
 
-
               <input
-
                 type="email"
-
                 name="email"
-
                 placeholder="Enter your email"
-
                 value={formData.email}
-
                 onChange={handleChange}
-
                 required
-
               />
-
 
             </div>
 
 
-            <div className="auth-form-group">
+            {/* PASSWORD */}
 
+            <div className="auth-form-group">
 
               <label>
                 Password
               </label>
 
-
               <input
-
                 type="password"
-
                 name="password"
-
                 placeholder="Enter your password"
-
                 value={formData.password}
-
                 onChange={handleChange}
-
                 required
-
               />
-
 
             </div>
 
+
+            {/* ERROR MESSAGE */}
 
             {error && (
 
@@ -340,11 +279,11 @@ function Login() {
             )}
 
 
+            {/* REMEMBER */}
+
             <div className="remember-row">
 
-
               <label>
-
 
                 <input
                   type="checkbox"
@@ -352,28 +291,22 @@ function Login() {
 
                 Remember me
 
-
               </label>
 
 
               <a href="#forgot">
-
                 Forgot Password?
-
               </a>
-
 
             </div>
 
 
+            {/* LOGIN BUTTON */}
+
             <button
-
               type="submit"
-
               className="auth-btn"
-
               disabled={loading}
-
             >
 
               {loading
@@ -383,9 +316,10 @@ function Login() {
 
             </button>
 
-
           </form>
 
+
+          {/* REGISTER */}
 
           <p className="auth-bottom-text">
 
@@ -394,13 +328,13 @@ function Login() {
             {" "}
 
             <Link to="/registration">
-
               Register Now
-
             </Link>
 
           </p>
 
+
+          {/* BACK HOME */}
 
           <Link
             to="/"
@@ -411,18 +345,13 @@ function Login() {
 
           </Link>
 
-
         </div>
 
-
       </div>
-
 
     </div>
 
   );
-
 }
-
 
 export default Login;

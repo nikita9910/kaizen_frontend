@@ -1,181 +1,200 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import API from "../api";
 import "./Courses.css";
 
-
 function Courses() {
-  return (
-    <div className="courses-page">
+    const [courses, setCourses] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState("");
 
-      {/* Header */}
-      <section className="courses-header">
-        <h1>Our Courses</h1>
-        <p>
-          Quality Education for a Bright and Successful Future
-        </p>
-      </section>
+    // Fetch courses from Django backend
+    useEffect(() => {
+        fetchCourses();
+    }, []);
 
-      {/* Courses */}
-      <section className="courses-section">
+    const fetchCourses = async () => {
+        try {
+            setLoading(true);
+            setError("");
 
-        <div className="courses-container">
+            const response = await API.get("courses/");
 
-          {/* State Board */}
-          <div className="course-card">
-            <div className="course-icon">📚</div>
+            console.log("Courses API response:", response.data);
 
-            <h2>7th to 10th</h2>
+            // Django REST Framework normally returns an array
+            setCourses(response.data);
+        } catch (err) {
+            console.error("Error fetching courses:", err);
 
-            <h3>State Board</h3>
+            setError(
+                "Unable to load courses. Please make sure the Django server is running."
+            );
+        } finally {
+            setLoading(false);
+        }
+    };
 
-            <p>
-              Complete academic coaching for Maharashtra State Board
-              students from 7th to 10th standard.
-            </p>
+    return (
+        <div className="courses-page">
 
-            <ul>
-              <li>✔ Mathematics</li>
-              <li>✔ Science</li>
-              <li>✔ English</li>
-              <li>✔ Social Science</li>
-              <li>✔ Regular Tests</li>
-            </ul>
+            {/* Hero Section */}
+            <section className="courses-hero">
 
-            <a href="/registration" className="course-btn">
-              Enroll Now
-            </a>
-          </div>
+                <div className="courses-hero-content">
 
+                    <h1>Our Courses</h1>
 
-          {/* CBSE */}
-          <div className="course-card">
-            <div className="course-icon">🎓</div>
+                    <p>
+                        Explore our courses and choose the right program
+                        for your academic success.
+                    </p>
 
-            <h2>5th to 10th</h2>
+                </div>
 
-            <h3>CBSE Board</h3>
-
-            <p>
-              Concept-based coaching and personalized guidance for
-              CBSE students from 5th to 10th standard.
-            </p>
-
-            <ul>
-              <li>✔ Mathematics</li>
-              <li>✔ Science</li>
-              <li>✔ English</li>
-              <li>✔ Concept Building</li>
-              <li>✔ Practice Tests</li>
-            </ul>
-
-            <a href="/registration" className="course-btn">
-              Enroll Now
-            </a>
-          </div>
+            </section>
 
 
-          {/* Science */}
-          <div className="course-card">
-            <div className="course-icon">🔬</div>
+            {/* Courses Section */}
+            <section className="courses-section">
 
-            <h2>11th & 12th</h2>
+                <div className="courses-container">
 
-            <h3>Science</h3>
+                    <div className="section-heading">
 
-            <p>
-              Comprehensive preparation for 11th and 12th Science
-              students with experienced faculty and regular assessments.
-            </p>
+                        <h2>Available Courses</h2>
 
-            <ul>
-              <li>✔ Physics</li>
-              <li>✔ Chemistry</li>
-              <li>✔ Mathematics</li>
-              <li>✔ Biology</li>
-              <li>✔ Board Exam Preparation</li>
-            </ul>
+                        <p>
+                            Learn from experienced teachers and build a
+                            strong foundation for your future.
+                        </p>
 
-            <a href="/registration" className="course-btn">
-              Enroll Now
-            </a>
-          </div>
+                    </div>
 
 
-          {/* Scholarship */}
-          <div className="course-card scholarship-card">
-            <div className="course-icon">🏆</div>
+                    {/* Loading */}
+                    {loading && (
+                        <div className="loading-message">
+                            <h3>Loading courses...</h3>
+                            <p>Please wait.</p>
+                        </div>
+                    )}
 
-            <h2>Scholarship</h2>
 
-            <h3>NMMS Preparation</h3>
+                    {/* Error */}
+                    {!loading && error && (
+                        <div className="error-message">
 
-            <p>
-              Special preparation program for students appearing for
-              Scholarship and NMMS examinations.
-            </p>
+                            <h3>Something went wrong</h3>
 
-            <ul>
-              <li>✔ Mental Ability Test</li>
-              <li>✔ Scholastic Aptitude</li>
-              <li>✔ Practice Papers</li>
-              <li>✔ Mock Tests</li>
-              <li>✔ Expert Guidance</li>
-            </ul>
+                            <p>{error}</p>
 
-            <a href="/registration" className="course-btn">
-              Enroll Now
-            </a>
-          </div>
+                            <button
+                                onClick={fetchCourses}
+                                className="retry-btn"
+                            >
+                                Try Again
+                            </button>
+
+                        </div>
+                    )}
+
+
+                    {/* No Courses */}
+                    {!loading &&
+                        !error &&
+                        courses.length === 0 && (
+                            <div className="no-courses">
+
+                                <h3>No Courses Available</h3>
+
+                                <p>
+                                    There are currently no courses
+                                    available. Please check again later.
+                                </p>
+
+                            </div>
+                        )}
+
+
+                    {/* Courses */}
+                    {!loading &&
+                        !error &&
+                        courses.length > 0 && (
+
+                            <div className="courses-grid">
+
+                                {courses.map((course) => (
+
+                                    <div
+                                        className="course-card"
+                                        key={course.id}
+                                    >
+
+                                        {/* Icon */}
+                                        <div className="course-icon">
+                                            📚
+                                        </div>
+
+
+                                        {/* Course Name */}
+                                        <h3>
+                                            {course.course_name}
+                                        </h3>
+
+
+                                        {/* Duration */}
+                                        {course.duration && (
+                                            <p className="course-duration">
+                                                <strong>
+                                                    Duration:
+                                                </strong>{" "}
+                                                {course.duration}
+                                            </p>
+                                        )}
+
+
+                                        {/* Description */}
+                                        {course.description && (
+                                            <p className="course-description">
+                                                {course.description}
+                                            </p>
+                                        )}
+
+
+                                        {/* Fees */}
+                                        {course.fees && (
+                                            <p className="course-fees">
+                                                <strong>
+                                                    Fees:
+                                                </strong>{" "}
+                                                ₹{course.fees}
+                                            </p>
+                                        )}
+
+
+                                        {/* Enroll Button */}
+                                        <Link
+                                            to="/registration"
+                                            className="course-btn"
+                                        >
+                                            Enroll Now
+                                        </Link>
+
+                                    </div>
+
+                                ))}
+
+                            </div>
+
+                        )}
+
+                </div>
+
+            </section>
 
         </div>
-
-      </section>
-
-
-      {/* Why Choose Us */}
-      <section className="why-section">
-
-        <h2>Why Choose Kaizen Coaching Class?</h2>
-
-        <div className="why-container">
-
-          <div className="why-box">
-            <span>👨‍🏫</span>
-            <h3>Experienced Faculty</h3>
-            <p>
-              Learn from experienced and dedicated teachers.
-            </p>
-          </div>
-
-          <div className="why-box">
-            <span>📝</span>
-            <h3>Regular Tests</h3>
-            <p>
-              Regular tests and assessments to track your progress.
-            </p>
-          </div>
-
-          <div className="why-box">
-            <span>🎯</span>
-            <h3>Personal Attention</h3>
-            <p>
-              Individual guidance to improve student performance.
-            </p>
-          </div>
-
-          <div className="why-box">
-            <span>🏆</span>
-            <h3>Better Results</h3>
-            <p>
-              Focused preparation to help students achieve their goals.
-            </p>
-          </div>
-
-        </div>
-
-      </section>
-
-    </div>
-  );
+    );
 }
 
 export default Courses;

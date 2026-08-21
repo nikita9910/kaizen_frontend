@@ -28,6 +28,14 @@ import ManageNotices from "./pages/ManageNotices";
 import ManageStudents from "./pages/ManageStudents";
 import ManageStudyMaterial from "./pages/ManageStudyMaterial";
 
+//dashboard
+import AdminDashboard from "./pages/AdminDashboard";
+import StudentDashboard from "./pages/StudentDashboard";
+
+//student
+
+
+
 function App() {
   return (
     <>
@@ -49,14 +57,28 @@ function App() {
         <Route path="/managefaculty" element={<ManageFaculty/>} />
         <Route path="/manageassignments" element={<ManageAssignments/>} />
         <Route path="/manageattendance" element={<ManageAttendance/>} />
-        <Route path="managebatches" element={<ManageBatches/>} />
-        <Route path="managecourses" element={<ManageBatches/>} />
-        <Route path="manageexams" element={<ManageExams/>} />
-        <Route path="managefees" element={<ManageFees/>} />
-        <Route path="managefeedback" element={<ManageFeedback/>} />
-        <Route path="managenotices" element={<ManageNotices/>} />
-        <Route path="managestudents" element={<ManageStudents/>} />
-        <Route path="managestudymaterial" element={<ManageStudyMaterial/>} />
+        <Route path="/managebatches" element={<ManageBatches/>} />
+        <Route path="/managecourses" element={<ManageBatches/>} />
+        <Route path="/manageexams" element={<ManageExams/>} />
+        <Route path="/managefees" element={<ManageFees/>} />
+        <Route path="/managefeedback" element={<ManageFeedback/>} />
+        <Route path="/managenotices" element={<ManageNotices/>} />
+        <Route path="/managestudents" element={<ManageStudents/>} />
+        <Route path="/managestudymaterial" element={<ManageStudyMaterial/>} />
+
+
+        <Route path="/admin-dashboard" element={<AdminDashboard />} />
+        <Route path="/student-dashboard" element={<StudentDashboard />} />
+
+
+        {/* <Route path="/student-courses" element={<MyCourses />} />
+        <Route path="/student-attendance" element={<Attendance />} />
+        <Route path="/student-material" element={<StudyMaterial />} />
+        <Route path="/student-assignments" element={<Assignments />} />
+        <Route path="/student-exams" element={<OnlineExam />} />
+        <Route path="/student-results" element={<Results />} />
+        <Route path="/student-fees" element={<Fees />} />
+        <Route path="/student-profile" element={<Profile />} /> */}
         
       </Routes>
 
