@@ -121,7 +121,7 @@ function AdminDashboard() {
       <div className="admin-management">
 
         <Link
-          to="/admin-students"
+          to="/managestudents"
           className="admin-management-card"
         >
           <span>👨‍🎓</span>
@@ -131,7 +131,7 @@ function AdminDashboard() {
 
 
         <Link
-          to="/admin-faculty"
+          to="/managefaculty"
           className="admin-management-card"
         >
           <span>👨‍🏫</span>
@@ -141,7 +141,7 @@ function AdminDashboard() {
 
 
         <Link
-          to="/admin-courses"
+          to="/managecourses"
           className="admin-management-card"
         >
           <span>📚</span>
@@ -151,7 +151,7 @@ function AdminDashboard() {
 
 
         <Link
-          to="/admin-batches"
+          to="/managebatches"
           className="admin-management-card"
         >
           <span>🏫</span>
@@ -161,7 +161,7 @@ function AdminDashboard() {
 
 
         <Link
-          to="/admin-attendance"
+          to="/manageattendance"
           className="admin-management-card"
         >
           <span>📅</span>

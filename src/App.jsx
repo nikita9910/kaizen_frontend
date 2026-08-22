@@ -31,6 +31,7 @@ import ManageStudyMaterial from "./pages/ManageStudyMaterial";
 //dashboard
 import AdminDashboard from "./pages/AdminDashboard";
 import StudentDashboard from "./pages/StudentDashboard";
+import ManageCourses from "./pages/ManageCourses";
 
 //student
 
@@ -54,16 +55,16 @@ function App() {
         <Route path="/login" element={<Login/>} />
 
         {/* admin */}
+        <Route path="/managestudents" element={<ManageStudents/>} />
         <Route path="/managefaculty" element={<ManageFaculty/>} />
         <Route path="/manageassignments" element={<ManageAssignments/>} />
         <Route path="/manageattendance" element={<ManageAttendance/>} />
         <Route path="/managebatches" element={<ManageBatches/>} />
-        <Route path="/managecourses" element={<ManageBatches/>} />
+        <Route path="/managecourses" element={<ManageCourses/>} />
         <Route path="/manageexams" element={<ManageExams/>} />
         <Route path="/managefees" element={<ManageFees/>} />
         <Route path="/managefeedback" element={<ManageFeedback/>} />
         <Route path="/managenotices" element={<ManageNotices/>} />
-        <Route path="/managestudents" element={<ManageStudents/>} />
         <Route path="/managestudymaterial" element={<ManageStudyMaterial/>} />
 
 
