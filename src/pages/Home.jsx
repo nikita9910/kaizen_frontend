@@ -6,9 +6,13 @@ function Home() {
   return (
     <div className="home">
 
-      {/* ================= HERO SECTION ================= */}
+      {/* =====================================================
+          HERO SECTION
+      ===================================================== */}
 
       <section className="hero">
+
+        {/* LEFT CONTENT */}
 
         <div className="hero-content">
 
@@ -26,66 +30,116 @@ function Home() {
           </p>
 
           <p className="hero-description">
-            Quality education, expert guidance and personal attention
-            to help every student achieve their goals.
+            Quality education, expert guidance and personal
+            attention to help every student achieve their
+            academic goals.
           </p>
 
           <div className="hero-buttons">
-            <Link to="/courses" className="primary-btn">
+
+            <Link
+              to="/courses"
+              className="primary-btn"
+            >
               Explore Courses →
             </Link>
 
-            <Link to="/registration" className="secondary-btn">
+            <Link
+              to="/registration"
+              className="secondary-btn"
+            >
               Join Now
             </Link>
+
           </div>
 
         </div>
 
 
-        {/* HERO COURSE BOX */}
+        {/* =================================================
+            KAIZEN LOGO
+        ================================================= */}
 
-        <div className="hero-course-box">
+        <div className="hero-logo-box">
 
-          <div className="course-box-title">
-            <span>📚</span>
-            Courses We Offer
+          <div className="logo-circle">
+
+            <img
+              src="/kaizen-logo.png"
+              alt="Kaizen Coaching Class Logo"
+              className="hero-logo"
+            />
+
           </div>
 
-          <div className="hero-course-list">
+          <h3>
+            Kaizen Coaching Class
+          </h3>
 
-            <div className="hero-course-item">
-              <span className="number">01</span>
-              <div>
-                <strong>7th to 10th</strong>
-                <small>State Board</small>
-              </div>
-            </div>
+          <p>
+            Learn • Practice • Improve • Succeed
+          </p>
 
-            <div className="hero-course-item">
-              <span className="number">02</span>
-              <div>
-                <strong>5th to 10th</strong>
-                <small>CBSE</small>
-              </div>
-            </div>
+          <div className="logo-line"></div>
 
-            <div className="hero-course-item">
-              <span className="number">03</span>
-              <div>
-                <strong>11th & 12th</strong>
-                <small>Science</small>
-              </div>
-            </div>
+          <span>
+            Education For A Brighter Future
+          </span>
 
-            <div className="hero-course-item">
-              <span className="number">04</span>
-              <div>
-                <strong>Scholarship</strong>
-                <small>NMMS Preparation</small>
-              </div>
-            </div>
+        </div>
 
+      </section>
+
+
+      {/* =====================================================
+          QUICK STATS
+      ===================================================== */}
+
+      <section className="quick-stats">
+
+        <div className="quick-stat">
+
+          <span>📚</span>
+
+          <div>
+            <strong>4+</strong>
+            <p>Programs</p>
+          </div>
+
+        </div>
+
+
+        <div className="quick-stat">
+
+          <span>🎓</span>
+
+          <div>
+            <strong>7th–12th</strong>
+            <p>Classes</p>
+          </div>
+
+        </div>
+
+
+        <div className="quick-stat">
+
+          <span>👨‍🏫</span>
+
+          <div>
+            <strong>Expert</strong>
+            <p>Faculty</p>
+          </div>
+
+        </div>
+
+
+        <div className="quick-stat">
+
+          <span>🏆</span>
+
+          <div>
+            <strong>100%</strong>
+            <p>Dedication</p>
           </div>
 
         </div>
@@ -93,12 +147,17 @@ function Home() {
       </section>
 
 
-      {/* ================= COURSE SECTION ================= */}
+      {/* =====================================================
+          COURSE SECTION
+      ===================================================== */}
 
       <section className="courses-section">
 
         <div className="section-heading">
-          <p>WHAT WE OFFER</p>
+
+          <p>
+            WHAT WE OFFER
+          </p>
 
           <h2>
             Education For Every
@@ -106,12 +165,21 @@ function Home() {
           </h2>
 
           <div className="heading-line"></div>
+
+          <small>
+            Choose the right learning program for your
+            academic journey.
+          </small>
+
         </div>
 
 
         <div className="course-cards">
 
-          {/* CARD 1 */}
+
+          {/* =================================================
+              COURSE 1
+          ================================================= */}
 
           <div className="course-card">
 
@@ -139,9 +207,11 @@ function Home() {
           </div>
 
 
-          {/* CARD 2 */}
+          {/* =================================================
+              COURSE 2
+          ================================================= */}
 
-          <div className="course-card featured">
+          <div className="course-card">
 
             <div className="card-icon">
               🎓
@@ -167,7 +237,9 @@ function Home() {
           </div>
 
 
-          {/* CARD 3 */}
+          {/* =================================================
+              COURSE 3
+          ================================================= */}
 
           <div className="course-card">
 
@@ -195,7 +267,9 @@ function Home() {
           </div>
 
 
-          {/* CARD 4 */}
+          {/* =================================================
+              COURSE 4
+          ================================================= */}
 
           <div className="course-card">
 
@@ -222,16 +296,22 @@ function Home() {
 
           </div>
 
+
         </div>
 
       </section>
 
 
-      {/* ================= WHY KAIZEN ================= */}
+      {/* =====================================================
+          WHY KAIZEN
+      ===================================================== */}
 
       <section className="why-section">
 
         <div className="why-content">
+
+
+          {/* LEFT */}
 
           <div className="why-text">
 
@@ -244,51 +324,107 @@ function Home() {
               <span> Classroom Learning</span>
             </h2>
 
-            <p>
-              At Kaizen Coaching Class, we believe every student
-              has the potential to achieve something great.
-              Our teaching approach focuses on concepts,
-              practice and continuous improvement.
+            <p className="why-description">
+              At Kaizen Coaching Class, we believe every
+              student has the potential to achieve something
+              great. Our teaching approach focuses on
+              concepts, practice and continuous improvement.
             </p>
+
 
             <div className="features">
 
-              <div className="feature">
-                <span>✓</span>
-                <div>
-                  <h4>Expert Guidance</h4>
-                  <p>Learn from experienced teachers.</p>
-                </div>
-              </div>
 
               <div className="feature">
-                <span>✓</span>
+
+                <span className="feature-icon">
+                  ✓
+                </span>
+
                 <div>
-                  <h4>Personal Attention</h4>
-                  <p>Individual attention for every student.</p>
+
+                  <h4>
+                    Expert Guidance
+                  </h4>
+
+                  <p>
+                    Learn from experienced teachers.
+                  </p>
+
                 </div>
+
               </div>
 
-              <div className="feature">
-                <span>✓</span>
-                <div>
-                  <h4>Regular Practice</h4>
-                  <p>Tests and practice to improve performance.</p>
-                </div>
-              </div>
 
               <div className="feature">
-                <span>✓</span>
+
+                <span className="feature-icon">
+                  ✓
+                </span>
+
                 <div>
-                  <h4>Student Success</h4>
-                  <p>Focused learning for better results.</p>
+
+                  <h4>
+                    Personal Attention
+                  </h4>
+
+                  <p>
+                    Individual attention for every student.
+                  </p>
+
                 </div>
+
               </div>
+
+
+              <div className="feature">
+
+                <span className="feature-icon">
+                  ✓
+                </span>
+
+                <div>
+
+                  <h4>
+                    Regular Practice
+                  </h4>
+
+                  <p>
+                    Tests and practice to improve performance.
+                  </p>
+
+                </div>
+
+              </div>
+
+
+              <div className="feature">
+
+                <span className="feature-icon">
+                  ✓
+                </span>
+
+                <div>
+
+                  <h4>
+                    Student Success
+                  </h4>
+
+                  <p>
+                    Focused learning for better results.
+                  </p>
+
+                </div>
+
+              </div>
+
 
             </div>
 
           </div>
 
+
+          {/* RIGHT */}
 
           <div className="success-box">
 
@@ -300,13 +436,17 @@ function Home() {
               Learn
             </h3>
 
-            <span>↓</span>
+            <span>
+              ↓
+            </span>
 
             <h3>
               Practice
             </h3>
 
-            <span>↓</span>
+            <span>
+              ↓
+            </span>
 
             <h3>
               Succeed
@@ -314,45 +454,201 @@ function Home() {
 
           </div>
 
+
         </div>
 
       </section>
 
 
-      {/* ================= STATS ================= */}
+      {/* =====================================================
+          LEARNING PROCESS
+      ===================================================== */}
+
+      <section className="process-section">
+
+        <div className="section-heading">
+
+          <p>
+            OUR APPROACH
+          </p>
+
+          <h2>
+            Simple Steps To
+            <span> Success</span>
+          </h2>
+
+          <div className="heading-line"></div>
+
+        </div>
+
+
+        <div className="process-grid">
+
+
+          <div className="process-card">
+
+            <div className="process-number">
+              01
+            </div>
+
+            <div className="process-icon">
+              📖
+            </div>
+
+            <h3>
+              Learn
+            </h3>
+
+            <p>
+              Understand concepts with simple and
+              effective teaching methods.
+            </p>
+
+          </div>
+
+
+          <div className="process-card">
+
+            <div className="process-number">
+              02
+            </div>
+
+            <div className="process-icon">
+              ✍️
+            </div>
+
+            <h3>
+              Practice
+            </h3>
+
+            <p>
+              Practice regularly through tests,
+              assignments and activities.
+            </p>
+
+          </div>
+
+
+          <div className="process-card">
+
+            <div className="process-number">
+              03
+            </div>
+
+            <div className="process-icon">
+              📊
+            </div>
+
+            <h3>
+              Improve
+            </h3>
+
+            <p>
+              Identify weaknesses and improve your
+              academic performance.
+            </p>
+
+          </div>
+
+
+          <div className="process-card">
+
+            <div className="process-number">
+              04
+            </div>
+
+            <div className="process-icon">
+              🏆
+            </div>
+
+            <h3>
+              Succeed
+            </h3>
+
+            <p>
+              Achieve your academic goals with
+              confidence.
+            </p>
+
+          </div>
+
+
+        </div>
+
+      </section>
+
+
+      {/* =====================================================
+          FINAL STATS
+      ===================================================== */}
 
       <section className="stats-section">
 
         <div className="stat">
-          <strong>4+</strong>
-          <span>Programs</span>
+
+          <strong>
+            4+
+          </strong>
+
+          <span>
+            Programs
+          </span>
+
         </div>
 
-        <div className="stat">
-          <strong>7th–12th</strong>
-          <span>Classes</span>
-        </div>
 
         <div className="stat">
-          <strong>100%</strong>
-          <span>Dedication</span>
+
+          <strong>
+            7th–12th
+          </strong>
+
+          <span>
+            Classes
+          </span>
+
         </div>
 
+
         <div className="stat">
-          <strong>1</strong>
-          <span>Goal — Success</span>
+
+          <strong>
+            Expert
+          </strong>
+
+          <span>
+            Faculty
+          </span>
+
+        </div>
+
+
+        <div className="stat">
+
+          <strong>
+            100%
+          </strong>
+
+          <span>
+            Dedication
+          </span>
+
         </div>
 
       </section>
 
 
-      {/* ================= CTA ================= */}
+      {/* =====================================================
+          CTA
+      ===================================================== */}
 
       <section className="cta-section">
 
-        <div>
+        <div className="cta-content">
 
-          <p>READY TO START?</p>
+          <p>
+            READY TO START?
+          </p>
 
           <h2>
             Give Your Child The
@@ -360,11 +656,12 @@ function Home() {
           </h2>
 
           <p>
-            Join Kaizen Coaching Class and take the next step
-            towards a brighter academic future.
+            Join Kaizen Coaching Class and take the next
+            step towards a brighter academic future.
           </p>
 
         </div>
+
 
         <Link
           to="/registration"
@@ -374,6 +671,7 @@ function Home() {
         </Link>
 
       </section>
+
 
     </div>
   );

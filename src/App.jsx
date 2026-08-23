@@ -34,7 +34,14 @@ import StudentDashboard from "./pages/StudentDashboard";
 import ManageCourses from "./pages/ManageCourses";
 
 //student
-
+import MyCourses from "./pages/MyCourses";
+import Attendance from "./pages/Attendance";
+import StudyMaterial from "./pages/StudyMaterial";
+import Assignments from "./pages/Assignments";
+import OnlineExam from "./pages/OnlineExam";
+import Results from "./pages/Results";
+import Fees from "./pages/Fees";
+import Profile from "./pages/Profile";
 
 
 function App() {
@@ -72,14 +79,14 @@ function App() {
         <Route path="/student-dashboard" element={<StudentDashboard />} />
 
 
-        {/* <Route path="/student-courses" element={<MyCourses />} />
-        <Route path="/student-attendance" element={<Attendance />} />
-        <Route path="/student-material" element={<StudyMaterial />} />
-        <Route path="/student-assignments" element={<Assignments />} />
-        <Route path="/student-exams" element={<OnlineExam />} />
-        <Route path="/student-results" element={<Results />} />
-        <Route path="/student-fees" element={<Fees />} />
-        <Route path="/student-profile" element={<Profile />} /> */}
+        <Route path="/mycourses" element={<MyCourses />} />
+        <Route path="/attendance" element={<Attendance />} />
+        <Route path="/studymaterial" element={<StudyMaterial />} />
+        <Route path="/assignments" element={<Assignments />} />
+        <Route path="/onlineexams" element={<OnlineExam />} />
+        <Route path="/results" element={<Results />} />
+        <Route path="/fees" element={<Fees />} />
+        <Route path="/profile" element={<Profile />} /> 
         
       </Routes>
 

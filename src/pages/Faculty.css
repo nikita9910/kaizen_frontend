@@ -4,10 +4,6 @@
 }
 
 
-/* =========================
-   HERO SECTION
-   ========================= */
-
 .faculty-hero {
   min-height: 350px;
 
@@ -21,8 +17,8 @@
 
   background: linear-gradient(
     135deg,
-    #0755a5,
-    #0d6efd
+    #063b91,
+    #0756bd
   );
 
   color: white;

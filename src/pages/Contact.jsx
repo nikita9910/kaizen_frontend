@@ -474,37 +474,6 @@ function Contact() {
 
       </section>
 
-
-
-      {/* =========================
-          MAP SECTION
-          ========================= */}
-
-      <section className="map-section">
-
-        <h2>
-          Find Us On Map
-        </h2>
-
-        <p>
-          Visit Kaizen Coaching Class
-        </p>
-
-
-        <div className="map-container">
-
-          <iframe
-            title="Kaizen Coaching Class Location"
-            src="https://www.google.com/maps?q=Satara,Maharashtra,India&output=embed"
-            loading="lazy"
-            allowFullScreen
-          ></iframe>
-
-        </div>
-
-      </section>
-
-
     </div>
   );
 }
