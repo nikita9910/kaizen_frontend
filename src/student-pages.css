@@ -89,3 +89,293 @@ td {
     grid-template-columns: 1fr;
   }
 }
+
+.notice-form {
+  display: grid;
+  gap: 15px;
+  max-width: 600px;
+  margin: 25px 0;
+  padding: 25px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+}
+
+.notice-form input,
+.notice-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 14px;
+  border: 1px solid #d5dfeb;
+  border-radius: 8px;
+  font: inherit;
+}
+
+.notice-form textarea {
+  resize: vertical;
+}
+
+.notice-form .primary-btn {
+  justify-self: start;
+}
+
+/* Online Exam cards */
+.exam-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 28px;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.exam-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.exam-card > span {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  background: #eaf2ff;
+  border-radius: 12px;
+  font-size: 26px;
+}
+
+.exam-card h2 {
+  margin: 4px 0;
+  color: #0755a5;
+  font-size: 21px;
+}
+
+.exam-card p {
+  margin: 0;
+  color: #555;
+  line-height: 1.5;
+}
+
+.exam-card .primary-btn {
+  margin-top: 10px;
+}
+
+/* Make exam cards fit smaller screens */
+@media (max-width: 900px) {
+  .data-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .data-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .exam-card {
+    padding: 22px;
+  }
+}
+
+/* Feedback page */
+.feedback-textarea {
+  display: block;
+  width: 100%;
+  min-height: 130px;
+  margin: 10px 0 18px;
+  padding: 12px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: #fff;
+  color: #1e293b;
+  font: inherit;
+  resize: vertical;
+  box-sizing: border-box;
+}
+
+.feedback-textarea:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.student-page label[for="feedback-message"] {
+  display: block;
+  margin-top: 14px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.student-page .info-card form .primary-btn {
+  margin-top: 4px;
+}
+
+.student-page button.primary-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.student-page [role="alert"] {
+  margin-top: 12px;
+  color: #b91c1c;
+}
+
+.student-page h2 {
+  margin-bottom: 14px;
+}
+
+.student-page .table-box {
+  overflow-x: auto;
+}
+
+.student-page .table-box table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.student-page .table-box th,
+.student-page .table-box td {
+  padding: 12px 14px;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+  vertical-align: top;
+}
+
+.student-page .table-box th {
+  background: #f1f5f9;
+  color: #334155;
+  font-weight: 600;
+}
+
+.student-page .table-box tr:last-child td {
+  border-bottom: none;
+}
+
+@media (max-width: 600px) {
+  .feedback-textarea {
+    min-height: 110px;
+  }
+
+  .student-page .table-box th,
+  .student-page .table-box td {
+    padding: 10px;
+  }
+}
+
+/* Manage Fees page */
+.manage-fees-page {
+  padding: 24px;
+}
+
+.manage-fees-page .page-subtitle {
+  margin-bottom: 24px;
+  color: #64748b;
+}
+
+.manage-fees-page .info-card {
+  margin-bottom: 28px;
+  padding: 22px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.manage-fees-page .manage-fees-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px 18px;
+}
+
+.manage-fees-page .manage-fees-form label {
+  align-self: end;
+  color: #334155;
+  font-weight: 600;
+}
+
+.manage-fees-page .manage-fees-form input,
+.manage-fees-page .manage-fees-form select {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  padding: 11px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: #fff;
+  color: #1e293b;
+  font: inherit;
+}
+
+.manage-fees-page .manage-fees-form input:focus,
+.manage-fees-page .manage-fees-form select:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.manage-fees-page .manage-fees-form .primary-btn {
+  grid-column: 1 / -1;
+  justify-self: start;
+  margin-top: 8px;
+}
+
+.manage-fees-page .table-box {
+  overflow-x: auto;
+  margin-top: 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.manage-fees-page table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.manage-fees-page th,
+.manage-fees-page td {
+  padding: 13px 15px;
+  border-bottom: 1px solid #e2e8f0;
+  text-align: left;
+  vertical-align: top;
+  white-space: nowrap;
+}
+
+.manage-fees-page th {
+  background: #f1f5f9;
+  color: #334155;
+  font-weight: 600;
+}
+
+.manage-fees-page tbody tr:hover {
+  background: #f8fafc;
+}
+
+.manage-fees-page tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.manage-fees-page [role="alert"] {
+  color: #b91c1c;
+}
+
+@media (max-width: 650px) {
+  .manage-fees-page {
+    padding: 14px;
+  }
+
+  .manage-fees-page .manage-fees-form {
+    grid-template-columns: 1fr;
+  }
+
+  .manage-fees-page .manage-fees-form .primary-btn {
+    grid-column: auto;
+  }
+
+  .manage-fees-page th,
+  .manage-fees-page td {
+    padding: 10px;
+  }
+}

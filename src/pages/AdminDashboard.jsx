@@ -289,7 +289,7 @@ function AdminDashboard() {
 
         <Link
 
-          to="/admin-fees"
+          to="/managefees"
 
           className="admin-management-card"
 
@@ -308,28 +308,30 @@ function AdminDashboard() {
 
 
         <Link
-
-          to="/admin-exams"
-
-          className="admin-management-card"
-
-        >
-
+          to="/manageexams"
+          className="admin-management-card">
           <span>💻</span>
-
           <h3>Examinations</h3>
-
           <p>
             Create and manage online examinations.
           </p>
 
         </Link>
+        <Link
+          to="/manageresults"
+          className="admin-management-card">
+          <span>🏆</span>
+          <h3>Results</h3>
+          <p>
+            Fill examination results.
+          </p>
 
+        </Link>
 
 
         <Link
 
-          to="/admin-material"
+          to="/managestudymaterial"
 
           className="admin-management-card"
 
@@ -349,7 +351,7 @@ function AdminDashboard() {
 
         <Link
 
-          to="/admin-assignments"
+          to="/manageassignments"
 
           className="admin-management-card"
 
@@ -369,7 +371,7 @@ function AdminDashboard() {
 
         <Link
 
-          to="/admin-notices"
+          to="/managenotices"
 
           className="admin-management-card"
         >
@@ -381,7 +383,7 @@ function AdminDashboard() {
         </Link>
 
         <Link
-          to="/admin-feedback"
+          to="/managefeedback"
           className="admin-management-card"
         >
 

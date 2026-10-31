@@ -106,7 +106,7 @@ function StudentDashboard() {
         {/* MY COURSES */}
 
         <Link
-          to="/student-courses"
+          to="/mycourses"
           className="dashboard-card"
         >
 
@@ -127,7 +127,7 @@ function StudentDashboard() {
         {/* ATTENDANCE */}
 
         <Link
-          to="/student-attendance"
+          to="/attendance"
           className="dashboard-card"
         >
 
@@ -148,7 +148,7 @@ function StudentDashboard() {
         {/* STUDY MATERIAL */}
 
         <Link
-          to="/student-material"
+          to="/studymaterial"
           className="dashboard-card"
         >
 
@@ -169,7 +169,7 @@ function StudentDashboard() {
         {/* ASSIGNMENTS */}
 
         <Link
-          to="/student-assignments"
+          to="/assignments"
           className="dashboard-card"
         >
 
@@ -190,14 +190,14 @@ function StudentDashboard() {
         {/* ONLINE EXAMS */}
 
         <Link
-          to="/student-exams"
+          to="/onlineexams"
           className="dashboard-card"
         >
 
           <span>💻</span>
 
           <h3>
-            Online Exams
+             Exams
           </h3>
 
           <p>
@@ -211,7 +211,7 @@ function StudentDashboard() {
         {/* RESULTS */}
 
         <Link
-          to="/student-results"
+          to="/results"
           className="dashboard-card"
         >
 
@@ -232,7 +232,7 @@ function StudentDashboard() {
         {/* FEES */}
 
         <Link
-          to="/student-fees"
+          to="/fees"
           className="dashboard-card"
         >
 
@@ -248,27 +248,48 @@ function StudentDashboard() {
 
         </Link>
 
-
-
-        {/* PROFILE */}
-
         <Link
-          to="/student-profile"
+          to="/notices"
           className="dashboard-card"
         >
 
-          <span>👤</span>
+          <span>📢</span>
 
           <h3>
-            My Profile
+            Notices
           </h3>
 
           <p>
-            View and update your profile.
+            View important class notices.
           </p>
 
         </Link>
 
+        {/* PROFILE */}
+
+        <Link
+          to="/profile"
+          className="dashboard-card">
+          <span>👤</span>
+          <h3>
+            My Profile
+          </h3>
+          <p>
+            View and update your profile.
+          </p>
+        </Link>
+
+        <Link
+          to="/feedback"
+          className="dashboard-card">
+          <span>💬</span>
+          <h3>
+            Feedback
+          </h3>
+          <p>
+            feedback and queries.
+          </p>
+        </Link>
 
       </div>
 

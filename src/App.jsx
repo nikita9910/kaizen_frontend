@@ -26,6 +26,7 @@ import ManageFeedback from "./pages/ManageFeedback";
 import ManageFees from "./pages/ManageFees";
 import ManageNotices from "./pages/ManageNotices";
 import ManageStudents from "./pages/ManageStudents";
+import ManageResults from "./pages/ManageResults";
 import ManageStudyMaterial from "./pages/ManageStudyMaterial";
 
 //dashboard
@@ -41,7 +42,10 @@ import Assignments from "./pages/Assignments";
 import OnlineExam from "./pages/OnlineExam";
 import Results from "./pages/Results";
 import Fees from "./pages/Fees";
+import Notices from "./pages/Notices";
 import Profile from "./pages/Profile";
+import Feedback from "./pages/Feedback";
+
 
 
 function App() {
@@ -69,6 +73,7 @@ function App() {
         <Route path="/managebatches" element={<ManageBatches/>} />
         <Route path="/managecourses" element={<ManageCourses/>} />
         <Route path="/manageexams" element={<ManageExams/>} />
+        <Route path="/manageresults" element={<ManageResults />} />
         <Route path="/managefees" element={<ManageFees/>} />
         <Route path="/managefeedback" element={<ManageFeedback/>} />
         <Route path="/managenotices" element={<ManageNotices/>} />
@@ -86,7 +91,9 @@ function App() {
         <Route path="/onlineexams" element={<OnlineExam />} />
         <Route path="/results" element={<Results />} />
         <Route path="/fees" element={<Fees />} />
+        <Route path="/notices" element={<Notices />} />
         <Route path="/profile" element={<Profile />} /> 
+        <Route path="/feedback" element={<Feedback />} />
         
       </Routes>
 
