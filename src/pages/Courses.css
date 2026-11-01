@@ -1,494 +1,133 @@
-/* =========================================
-   COURSES PAGE
-   ========================================= */
-
+/* Main page */
 .courses-page {
   min-height: 100vh;
+  padding-bottom: 60px;
   background: #f5f7fb;
+  color: #1f2937;
+  font-family: Arial, sans-serif;
 }
 
-
-/* =========================================
-   HERO SECTION
-   ========================================= */
-
+/* Hero section */
 .courses-hero {
-  min-height: 320px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
   padding: 60px 20px;
-
   text-align: center;
-
-  background: linear-gradient(
-    135deg,
-    #063b91,
-    #0756bd
-  );
-
-  color: white;
-}
-
-.courses-hero-content {
-  max-width: 800px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #123b70, #2474b8);
 }
 
 .courses-hero h1 {
-  margin: 0 0 15px;
-
-  font-size: 46px;
+  margin: 0 0 12px;
+  font-size: 2.5rem;
   font-weight: 700;
 }
 
 .courses-hero p {
   margin: 0;
-
-  font-size: 18px;
-  line-height: 1.7;
-
-  color: rgba(255, 255, 255, 0.9);
-}
-
-
-/* =========================================
-   INTRODUCTION
-   ========================================= */
-
-.courses-intro {
-  max-width: 900px;
-
-  margin: 0 auto;
-
-  padding: 60px 20px 35px;
-
-  text-align: center;
-}
-
-.courses-intro h2 {
-  margin: 0 0 15px;
-
-  color: #222;
-
-  font-size: 32px;
-}
-
-.courses-intro p {
-  margin: 0;
-
-  color: #666;
-
-  font-size: 16px;
-  line-height: 1.8;
-}
-
-
-/* =========================================
-   COURSES CONTAINER
-   ========================================= */
-
-.courses-container {
-  max-width: 1200px;
-
-  margin: 0 auto;
-
-  padding: 20px 20px 70px;
-}
-
-
-/* =========================================
-   COURSE GRID
-   3 COURSES IN EACH ROW
-   ========================================= */
-
-.courses-grid {
-  display: grid;
-
-  grid-template-columns: repeat(3, 1fr);
-
-  gap: 30px;
-}
-
-
-/* =========================================
-   COURSE CARD
-   ========================================= */
-
-.course-card {
-  display: flex;
-
-  flex-direction: column;
-
-  min-height: 400px;
-
-  padding: 30px 25px;
-
-  background: white;
-
-  border-radius: 18px;
-
-  text-align: center;
-
-  box-shadow:
-    0 5px 20px rgba(0, 0, 0, 0.08);
-
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
-}
-
-
-/* =========================================
-   CARD HOVER
-   ========================================= */
-
-.course-card:hover {
-  transform: translateY(-8px);
-
-  box-shadow:
-    0 15px 35px rgba(0, 0, 0, 0.14);
-}
-
-
-/* =========================================
-   COURSE ICON
-   ========================================= */
-
-.course-icon {
-  width: 80px;
-  height: 80px;
-
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  margin: 0 auto 20px;
-
-  border-radius: 50%;
-
-  background: #eef2ff;
-
-  font-size: 40px;
-
-  transition: transform 0.3s ease;
-}
-
-.course-card:hover .course-icon {
-  transform: scale(1.1);
-}
-
-
-/* =========================================
-   COURSE TITLE
-   ========================================= */
-
-.course-card h3 {
-  margin: 0 0 12px;
-
-  color: #222;
-
-  font-size: 22px;
-
-  font-weight: 700;
-}
-
-
-/* =========================================
-   COURSE DESCRIPTION
-   ========================================= */
-
-.course-card p {
-  margin: 0 0 18px;
-
-  color: #666;
-
-  font-size: 15px;
-
-  line-height: 1.7;
-}
-
-
-/* =========================================
-   COURSE DETAILS
-   ========================================= */
-
-.course-details {
-  margin-top: auto;
-
-  padding-top: 18px;
-
-  border-top: 1px solid #eeeeee;
-}
-
-.course-details p {
-  margin: 7px 0;
-
-  color: #555;
-
-  font-size: 14px;
-}
-
-
-/* =========================================
-   COURSE BUTTON
-   ========================================= */
-
-.course-btn {
-  display: inline-block;
-
-  margin-top: 18px;
-
-  padding: 11px 25px;
-
-  border: none;
-
-  border-radius: 8px;
-
-  background: #4f46e5;
-
-  color: white;
-
-  font-size: 15px;
-
-  font-weight: 600;
-
-  text-decoration: none;
-
-  cursor: pointer;
-
-  transition:
-    background 0.3s ease,
-    transform 0.3s ease;
-}
-
-.course-btn:hover {
-  background: #3730a3;
-
-  transform: translateY(-2px);
-}
-
-
-/* =========================================
-   WHY CHOOSE OUR COURSES
-   ========================================= */
-
-.courses-features {
-  padding: 70px 6%;
-
-  background: white;
-
-  text-align: center;
-}
-
-.courses-features h2 {
-  margin: 0 0 40px;
-
-  color: #222;
-
-  font-size: 32px;
-}
-
-
-/* =========================================
-   FEATURE GRID
-   ========================================= */
-
-.course-feature-grid {
-  max-width: 1200px;
-
-  margin: 0 auto;
-
-  display: grid;
-
-  grid-template-columns: repeat(4, 1fr);
-
-  gap: 25px;
-}
-
-
-/* =========================================
-   FEATURE CARD
-   ========================================= */
-
-.course-feature {
-  padding: 30px 20px;
-
-  background: #f5f7fb;
-
-  border-radius: 15px;
-
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
-}
-
-.course-feature:hover {
-  transform: translateY(-6px);
-
-  box-shadow:
-    0 10px 25px rgba(0, 0, 0, 0.08);
-}
-
-
-/* FEATURE ICON */
-
-.course-feature span {
-  display: block;
-
-  margin-bottom: 15px;
-
-  font-size: 40px;
-}
-
-
-/* FEATURE TITLE */
-
-.course-feature h3 {
-  margin: 0 0 10px;
-
-  color: #222;
-
-  font-size: 19px;
-}
-
-
-/* FEATURE DESCRIPTION */
-
-.course-feature p {
-  margin: 0;
-
-  color: #666;
-
-  font-size: 14px;
-
+  font-size: 1.1rem;
   line-height: 1.6;
 }
 
-
-/* =========================================
-   LOADING MESSAGE
-   ========================================= */
-
-.courses-loading {
-  padding: 50px;
-
-  text-align: center;
-
-  color: #555;
-
-  font-size: 18px;
+/* Course list */
+.courses-container {
+  width: min(1100px, 92%);
+  margin: 40px auto 0;
 }
 
-
-/* =========================================
-   NO COURSES MESSAGE
-   ========================================= */
-
-.no-courses {
-  padding: 50px;
-
-  text-align: center;
-
-  color: #777;
-
-  font-size: 18px;
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
 }
 
+/* Individual course card */
+.course-card {
+  display: flex;
+  flex-direction: column;
+  padding: 26px;
+  border: 1px solid #e1e8f0;
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 5px 18px rgba(22, 48, 79, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
 
-/* =========================================
-   TABLET
-   ========================================= */
+.course-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 26px rgba(22, 48, 79, 0.14);
+}
 
-@media (max-width: 1000px) {
+.course-card h2 {
+  margin: 0 0 14px;
+  color: #123b70;
+  font-size: 1.35rem;
+}
 
+.course-description {
+  margin: 0 0 22px;
+  color: #5b6573;
+  line-height: 1.6;
+  flex-grow: 1;
+}
+
+.course-details {
+  padding-top: 16px;
+  border-top: 1px solid #e8edf3;
+}
+
+.course-details p {
+  margin: 8px 0 0;
+  color: #374151;
+  line-height: 1.5;
+}
+
+.course-details strong {
+  color: #123b70;
+}
+
+/* Loading, error, and empty messages */
+.courses-message {
+  width: min(1100px, 92%);
+  margin: 40px auto;
+  text-align: center;
+  color: #4b5563;
+  font-size: 1rem;
+}
+
+.courses-error {
+  color: #b42318;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
   .courses-grid {
-    grid-template-columns: repeat(2, 1fr);
-
-    gap: 25px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-
-
-  .course-feature-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
 
   .courses-hero h1 {
-    font-size: 38px;
+    font-size: 2.1rem;
   }
-
 }
 
-
-/* =========================================
-   MOBILE
-   ========================================= */
-
-@media (max-width: 650px) {
-
+/* Mobile */
+@media (max-width: 600px) {
   .courses-hero {
-    min-height: 250px;
-
-    padding: 45px 20px;
+    padding: 44px 18px;
   }
-
 
   .courses-hero h1 {
-    font-size: 32px;
+    font-size: 1.8rem;
   }
-
 
   .courses-hero p {
-    font-size: 15px;
+    font-size: 1rem;
   }
-
-
-  .courses-intro {
-    padding: 45px 20px 25px;
-  }
-
-
-  .courses-intro h2 {
-    font-size: 27px;
-  }
-
-
-  .courses-container {
-    padding: 20px 15px 50px;
-  }
-
-
-  /* ONE COURSE PER ROW */
 
   .courses-grid {
     grid-template-columns: 1fr;
-
-    gap: 20px;
-  }
-
-
-  .course-card {
-    min-height: 380px;
-  }
-
-
-  .courses-features {
-    padding: 50px 20px;
-  }
-
-
-  .courses-features h2 {
-    font-size: 27px;
-  }
-
-
-  .course-feature-grid {
-    grid-template-columns: 1fr;
-
     gap: 18px;
   }
 
+  .course-card {
+    padding: 22px;
+  }
 }

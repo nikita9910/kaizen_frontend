@@ -29,65 +29,41 @@ function Registration() {
   const [loadingBatches, setLoadingBatches] = useState(true);
   const [loading, setLoading] = useState(false);
 
-
-  // =========================
-  // GET COURSES
-  // =========================
-
+  // Fetch courses from Django
   useEffect(() => {
+    const fetchCourses = async () => {
+      try {
+        const response = await API.get("courses/");
+        const data = response.data;
+        setCourses(Array.isArray(data) ? data : data.results || []);
+      } catch (error) {
+        console.error("Course error:", error.response?.data || error);
+      } finally {
+        setLoadingCourses(false);
+      }
+    };
+
     fetchCourses();
   }, []);
 
-  const fetchCourses = async () => {
-    try {
-      const response = await API.get("courses/");
-
-      console.log("Courses:", response.data);
-
-      setCourses(response.data);
-
-    } catch (error) {
-      console.error(
-        "Course error:",
-        error.response?.data || error
-      );
-    } finally {
-      setLoadingCourses(false);
-    }
-  };
-
-
-  // =========================
-  // GET BATCHES
-  // =========================
-
+  // Fetch batches from Django
   useEffect(() => {
+    const fetchBatches = async () => {
+      try {
+        const response = await API.get("batches/");
+        const data = response.data;
+        setBatches(Array.isArray(data) ? data : data.results || []);
+      } catch (error) {
+        console.error("Batch error:", error.response?.data || error);
+      } finally {
+        setLoadingBatches(false);
+      }
+    };
+
     fetchBatches();
   }, []);
 
-  const fetchBatches = async () => {
-    try {
-      const response = await API.get("batches/");
-
-      console.log("Batches:", response.data);
-
-      setBatches(response.data);
-
-    } catch (error) {
-      console.error(
-        "Batch error:",
-        error.response?.data || error
-      );
-    } finally {
-      setLoadingBatches(false);
-    }
-  };
-
-
-  // =========================
-  // HANDLE CHANGE
-  // =========================
-
+  // Handle form field changes
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -95,15 +71,10 @@ function Registration() {
     });
   };
 
-
-  // =========================
-  // SUBMIT REGISTRATION
-  // =========================
-
+  // Submit registration
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Password validation
     if (formData.password !== formData.confirm_password) {
       alert("Password and Confirm Password do not match.");
       return;
@@ -112,20 +83,10 @@ function Registration() {
     try {
       setLoading(true);
 
-      // Send data to Django
-      const response = await API.post(
-        "students/",
-        formData
-      );
-
-      console.log(
-        "Registration successful:",
-        response.data
-      );
+      await API.post("students/", formData);
 
       alert("Registration successful! Welcome to Kaizen Coaching Class.");
 
-      // Clear form
       setFormData({
         first_name: "",
         last_name: "",
@@ -142,72 +103,37 @@ function Registration() {
         gender: "",
       });
 
-      // =========================
-      // REDIRECT TO HOME PAGE
-      // =========================
-
       navigate("/");
-
     } catch (error) {
-      console.error(
-        "Registration error:",
-        error.response?.data || error
-      );
+      console.error("Registration error:", error.response?.data || error);
 
       alert(
         "Registration failed: " +
-        JSON.stringify(error.response?.data || {})
+          JSON.stringify(error.response?.data || error.message)
       );
-
     } finally {
       setLoading(false);
     }
   };
 
-
   return (
     <div className="auth-page">
-
       <div className="registration-container">
-
-        {/* HEADER */}
-
         <div className="registration-header">
+          <div className="registration-icon">🎓</div>
 
-          <div className="registration-icon">
-            🎓
-          </div>
-
-          <h1>
-            Join Kaizen Coaching Class
-          </h1>
+          <h1>Join Kaizen Coaching Class</h1>
 
           <p>
-            Create your student account and start
-            your learning journey.
+            Create your student account and start your learning journey.
           </p>
-
         </div>
 
-
-        {/* REGISTRATION FORM */}
-
-        <form
-          className="registration-form"
-          onSubmit={handleSubmit}
-        >
-
-
-          {/* FIRST NAME + LAST NAME */}
-
+        <form className="registration-form" onSubmit={handleSubmit}>
+          {/* First Name and Last Name */}
           <div className="registration-row">
-
             <div className="auth-form-group">
-
-              <label>
-                First Name
-              </label>
-
+              <label>First Name</label>
               <input
                 type="text"
                 name="first_name"
@@ -216,16 +142,10 @@ function Registration() {
                 onChange={handleChange}
                 required
               />
-
             </div>
 
-
             <div className="auth-form-group">
-
-              <label>
-                Last Name
-              </label>
-
+              <label>Last Name</label>
               <input
                 type="text"
                 name="last_name"
@@ -234,22 +154,13 @@ function Registration() {
                 onChange={handleChange}
                 required
               />
-
             </div>
-
           </div>
 
-
-          {/* EMAIL + MOBILE */}
-
+          {/* Email and Mobile */}
           <div className="registration-row">
-
             <div className="auth-form-group">
-
-              <label>
-                Email Address
-              </label>
-
+              <label>Email Address</label>
               <input
                 type="email"
                 name="email"
@@ -258,16 +169,10 @@ function Registration() {
                 onChange={handleChange}
                 required
               />
-
             </div>
 
-
             <div className="auth-form-group">
-
-              <label>
-                Mobile Number
-              </label>
-
+              <label>Mobile Number</label>
               <input
                 type="tel"
                 name="mobile"
@@ -276,102 +181,56 @@ function Registration() {
                 onChange={handleChange}
                 required
               />
-
             </div>
-
           </div>
 
-
-          {/* COURSE + BATCH */}
-
+          {/* Course and Batch */}
           <div className="registration-row">
-
             <div className="auth-form-group">
-
-              <label>
-                Select Course
-              </label>
-
+              <label>Select Course</label>
               <select
                 name="course"
                 value={formData.course}
                 onChange={handleChange}
                 required
               >
-
                 <option value="">
-                  {loadingCourses
-                    ? "Loading Courses..."
-                    : "Select a course"}
+                  {loadingCourses ? "Loading Courses..." : "Select a course"}
                 </option>
 
                 {courses.map((course) => (
-
-                  <option
-                    key={course.id}
-                    value={course.id}
-                  >
-                    {course.name ||
-                      course.course_name ||
-                      course.title}
+                  <option key={course.id} value={course.id}>
+                    {course.course_name || course.name || course.title}
                   </option>
-
                 ))}
-
               </select>
-
             </div>
 
-
             <div className="auth-form-group">
-
-              <label>
-                Select Batch
-              </label>
-
+              <label>Select Batch</label>
               <select
                 name="batch"
                 value={formData.batch}
                 onChange={handleChange}
                 required
               >
-
                 <option value="">
-                  {loadingBatches
-                    ? "Loading Batches..."
-                    : "Select a batch"}
+                  {loadingBatches ? "Loading Batches..." : "Select a batch"}
                 </option>
 
                 {batches.map((batch) => (
-
-                  <option
-                    key={batch.id}
-                    value={batch.id}
-                  >
-                    {batch.name ||
-                      batch.batch_name ||
-                      batch.title}
+                  <option key={batch.id} value={batch.id}>
+                    {batch.batch_name || batch.name || batch.title}
                   </option>
-
                 ))}
-
               </select>
-
             </div>
-
           </div>
 
-
-          {/* DOB + ADMISSION DATE */}
-
+          {/* Date of Birth and Admission Date */}
           <div className="registration-row">
-
             <div className="auth-form-group">
-
-              <label>
-                Date of Birth
-              </label>
-
+              <label>Date of Birth</label>
               <input
                 type="date"
                 name="dob"
@@ -379,16 +238,10 @@ function Registration() {
                 onChange={handleChange}
                 required
               />
-
             </div>
 
-
             <div className="auth-form-group">
-
-              <label>
-                Admission Date
-              </label>
-
+              <label>Admission Date</label>
               <input
                 type="date"
                 name="admission_date"
@@ -396,56 +249,28 @@ function Registration() {
                 onChange={handleChange}
                 required
               />
-
             </div>
-
           </div>
 
-
-          {/* GENDER + CITY */}
-
+          {/* Gender and City */}
           <div className="registration-row">
-
             <div className="auth-form-group">
-
-              <label>
-                Gender
-              </label>
-
+              <label>Gender</label>
               <select
                 name="gender"
                 value={formData.gender}
                 onChange={handleChange}
                 required
               >
-
-                <option value="">
-                  Select Gender
-                </option>
-
-                <option value="Male">
-                  Male
-                </option>
-
-                <option value="Female">
-                  Female
-                </option>
-
-                <option value="Other">
-                  Other
-                </option>
-
+                <option value="">Select Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
               </select>
-
             </div>
 
-
             <div className="auth-form-group">
-
-              <label>
-                City
-              </label>
-
+              <label>City</label>
               <input
                 type="text"
                 name="city"
@@ -454,20 +279,12 @@ function Registration() {
                 onChange={handleChange}
                 required
               />
-
             </div>
-
           </div>
 
-
-          {/* ADDRESS */}
-
+          {/* Address */}
           <div className="auth-form-group">
-
-            <label>
-              Address
-            </label>
-
+            <label>Address</label>
             <input
               type="text"
               name="address"
@@ -476,20 +293,12 @@ function Registration() {
               onChange={handleChange}
               required
             />
-
           </div>
 
-
-          {/* PASSWORD + CONFIRM PASSWORD */}
-
+          {/* Password and Confirm Password */}
           <div className="registration-row">
-
             <div className="auth-form-group">
-
-              <label>
-                Password
-              </label>
-
+              <label>Password</label>
               <input
                 type="password"
                 name="password"
@@ -498,16 +307,10 @@ function Registration() {
                 onChange={handleChange}
                 required
               />
-
             </div>
 
-
             <div className="auth-form-group">
-
-              <label>
-                Confirm Password
-              </label>
-
+              <label>Confirm Password</label>
               <input
                 type="password"
                 name="confirm_password"
@@ -516,62 +319,32 @@ function Registration() {
                 onChange={handleChange}
                 required
               />
-
             </div>
-
           </div>
 
-
-          {/* TERMS */}
-
+          {/* Terms */}
           <div className="terms-row">
-
-            <input
-              type="checkbox"
-              required
-            />
-
+            <input type="checkbox" required />
             <span>
-              I agree to the Terms & Conditions
-              and Privacy Policy.
+              I agree to the Terms &amp; Conditions and Privacy Policy.
             </span>
-
           </div>
 
-
-          {/* SUBMIT BUTTON */}
-
+          {/* Submit Button */}
           <button
             type="submit"
             className="auth-btn registration-btn"
             disabled={loading}
           >
-
-            {loading
-              ? "Creating Account..."
-              : "Create Account"}
-
+            {loading ? "Creating Account..." : "Create Account"}
           </button>
 
-
-          {/* LOGIN */}
-
+          {/* Login Link */}
           <p className="auth-bottom-text">
-
-            Already have an account?
-
-            {" "}
-
-            <Link to="/student-login">
-              Login Now
-            </Link>
-
+            Already have an account? <Link to="/student-login">Login Now</Link>
           </p>
-
         </form>
-
       </div>
-
     </div>
   );
 }

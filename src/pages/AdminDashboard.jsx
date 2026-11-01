@@ -126,59 +126,6 @@ function AdminDashboard() {
 
 
 
-      {/* =========================
-          ADMIN STATISTICS
-          ========================= */}
-
-      <div className="admin-statistics">
-
-
-        <div className="admin-stat-card">
-
-          <span>👨‍🎓</span>
-
-          <h2>250</h2>
-
-          <p>Total Students</p>
-
-        </div>
-
-
-        <div className="admin-stat-card">
-
-          <span>👨‍🏫</span>
-
-          <h2>15</h2>
-
-          <p>Total Faculty</p>
-
-        </div>
-
-
-        <div className="admin-stat-card">
-
-          <span>📚</span>
-
-          <h2>12</h2>
-
-          <p>Total Courses</p>
-
-        </div>
-
-
-        <div className="admin-stat-card">
-
-          <span>💰</span>
-
-          <h2>₹4.5L</h2>
-
-          <p>Fee Collection</p>
-
-        </div>
-
-      </div>
-
-
 
       {/* =========================
           ADMIN MANAGEMENT CARDS
@@ -383,10 +330,18 @@ function AdminDashboard() {
         </Link>
 
         <Link
-          to="/managefeedback"
-          className="admin-management-card"
-        >
+          to="/managecontactquery"
+          className="admin-management-card">
+          <span>📞</span>
+          <h3>Contact Query</h3>
+          <p>
+            View contact queries.
+          </p>
+        </Link>
 
+        <Link
+          to="/managefeedback"
+          className="admin-management-card">
           <span>💬</span>
           <h3>Feedback</h3>
           <p>

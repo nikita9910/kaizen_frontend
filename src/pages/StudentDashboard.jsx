@@ -265,19 +265,8 @@ function StudentDashboard() {
 
         </Link>
 
-        {/* PROFILE */}
+        {/* FEEDBACK */}
 
-        <Link
-          to="/profile"
-          className="dashboard-card">
-          <span>👤</span>
-          <h3>
-            My Profile
-          </h3>
-          <p>
-            View and update your profile.
-          </p>
-        </Link>
 
         <Link
           to="/feedback"

@@ -28,6 +28,7 @@ import ManageNotices from "./pages/ManageNotices";
 import ManageStudents from "./pages/ManageStudents";
 import ManageResults from "./pages/ManageResults";
 import ManageStudyMaterial from "./pages/ManageStudyMaterial";
+import ManageContactQuery from "./pages/ManageContactQuery";
 
 //dashboard
 import AdminDashboard from "./pages/AdminDashboard";
@@ -78,6 +79,7 @@ function App() {
         <Route path="/managefeedback" element={<ManageFeedback/>} />
         <Route path="/managenotices" element={<ManageNotices/>} />
         <Route path="/managestudymaterial" element={<ManageStudyMaterial/>} />
+        <Route path="/managecontactquery" element={<ManageContactQuery />} />
 
 
         <Route path="/admin-dashboard" element={<AdminDashboard />} />
