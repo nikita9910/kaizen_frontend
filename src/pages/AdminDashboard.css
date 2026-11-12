@@ -418,3 +418,157 @@
   }
 
 }
+.admin-reports {
+  margin-top: 30px;
+}
+
+.admin-reports h2 {
+  margin-bottom: 16px;
+}
+
+.report-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.report-buttons button {
+  padding: 11px 18px;
+  border: none;
+  border-radius: 22px;
+  background: #0756a6;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.report-buttons button:hover {
+  background: #03417f;
+}
+
+
+/* Monthly Examination Report */
+
+.monthly-exam-report {
+  margin: 30px 0;
+  padding: 25px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.monthly-exam-report h2 {
+  margin-bottom: 12px;
+  color: #222;
+}
+
+.monthly-exam-report p {
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.monthly-report-controls {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.monthly-report-controls input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 15px;
+}
+
+.monthly-report-controls button {
+  padding: 11px 18px;
+  background: #1769aa;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.monthly-report-controls button:hover {
+  background: #0d4778;
+}
+
+.monthly-report-controls button:disabled {
+  background: #999;
+  cursor: not-allowed;
+}
+
+.monthly-report-section {
+  background: #ffffff;
+  padding: 25px;
+  margin: 25px 0;
+  border-radius: 12px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+.monthly-report-section h2 {
+  color: #174ea6;
+  margin-bottom: 18px;
+}
+
+.monthly-report-section label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.monthly-report-section input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-right: 15px;
+}
+
+.monthly-report-section button {
+  background: #174ea6;
+  color: white;
+  border: none;
+  padding: 11px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.monthly-report-section button:hover {
+  background: #123b80;
+}
+
+.monthly-report-section {
+  background: #ffffff;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.monthly-report-section h2 {
+  color: #174ea6;
+  margin-bottom: 15px;
+}
+
+.monthly-report-section input {
+  padding: 9px;
+  margin: 0 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.monthly-report-section button {
+  background: #174ea6;
+  color: white;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.monthly-report-section button:hover {
+  background: #123b80;
+}
